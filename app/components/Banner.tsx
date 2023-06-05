@@ -55,7 +55,7 @@ export default function Banner() {
                         {d?.Subheading}
                       </h5>
 
-                      <Link to={d?.attributes?.Btntext}>
+                      <Link to={d?.Btntext}>
                         <Button
                           text="Lets Talk"
                           borderColor="white"

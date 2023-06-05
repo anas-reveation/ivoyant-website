@@ -14,13 +14,15 @@ export default function Footer() {
     <div className="bg-secondary  py-5">
       <div className="container">
         <p className="para text-white">We Are Here to Answer Your Questions</p>
+        <Link to="/contact">
         <Button
           text="Lets Talk"
           borderColor="white"
           color="text-white"
           className="mb-4 mt-2 py-1"
           width="120px"
-        />
+        /></Link>
+        
         <div className="row gy-4 justify-content-between">
           <div className="col-md-6 col-12">
             <div className="d-flex align-items-center">
@@ -94,9 +96,9 @@ export default function Footer() {
                     return (
                       <>
                         <div className="mb-3">
-                          <a
+                          <Link
                             className="text-white text-decoration-none"
-                            href={d?.attributes?.url}
+                            to={d?.attributes?.url}
                           >
                             <span className="">
                               {' '}
@@ -107,7 +109,7 @@ export default function Footer() {
                               />
                             </span>{' '}
                             {d?.attributes?.Name}
-                          </a>
+                          </Link>
                         </div>
                       </>
                     )
