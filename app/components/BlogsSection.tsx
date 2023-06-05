@@ -1,0 +1,63 @@
+import Button from './Button'
+import { loader } from '~/routes/Blogs'
+import { useLoaderData } from '@remix-run/react'
+import { Link } from '@remix-run/react'
+
+export default function BlogsSection() {
+  const result = useLoaderData<typeof loader>()
+  
+  return (
+    <>
+      <div className="container my-4">
+        <div className="row gy-4">
+          {result?.SlugData?.blogsSlugs?.data.map((d: any, $index: any) => {
+            return (
+              <div className="col-lg-4 col-md-6 col-12 ">
+                <div
+                  className="d-flex align-items-end bg-secondary"
+                  style={{
+                    backgroundImage: `url(${
+                      result.ENV.STRAPI_URL +
+                      d.attributes?.BgImage?.data?.attributes?.url
+                    })`,
+                    height: '550px',
+                    backgroundSize: 'contain',
+                  }}
+                >
+                  {/* <img src="./images/blogs/Rectangle 718.svg" className="w-100 " /> */}
+                  <div className="white-text p-4 bg-secondary w-100">
+                    <div className="row align-items-center">
+                      <div className="col-1">
+                        <img src="./images/blogs/Vector1.svg" />
+                      </div>
+                      <div className="col-10 ">
+                        <p className="fs-14 para mb-0 ">{d.attributes?.Name}</p>
+                      </div>
+                    </div>
+                    <h5 className="py-4">{d.attributes?.CardTitle}</h5>
+                    <hr className="my-0 opacity-n white-text" />
+                    <Link
+                      to={d.attributes?.SlugLink}
+                      style={{ textDecoration: 'none' }}
+                    >
+                      <div className="row align-items-center ">
+                        <div className="col-4">
+                          <p className="fs-14 para mb-0 pt-4 white-text">
+                            Learn More
+                          </p>
+                        </div>
+                        <div className="col-8 text-end">
+                          <img src="./images/blogs/Vector.svg" />
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </>
+  )
+}
