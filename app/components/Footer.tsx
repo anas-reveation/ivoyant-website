@@ -98,7 +98,7 @@ export default function Footer() {
                         <div className="mb-3">
                           <Link
                             className="text-white text-decoration-none"
-                            to={d?.attributes?.url}
+                            to={d?.attributes?.Url}
                           >
                             <span className="">
                               {' '}

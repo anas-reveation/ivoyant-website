@@ -12,7 +12,6 @@ import { Helmet } from 'react-helmet'
 
 export default function Home() {
   const result = useLoaderData<typeof loader>()
-  console.log(result)
   
   return (
     <>
