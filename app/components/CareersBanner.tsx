@@ -7,10 +7,12 @@ export interface CareerBannerProps {
   Link1?: string
   Link2?: string
   Image?: string
+  LinkText1?:string
+  LinkText2?:string
 }
 
 export default function CareersBanner(props: CareerBannerProps) {
-  const { Heading, Subheading, Title1, Title2, Link1, Link2, Image } = props
+  const { Heading, Subheading, Title1, Title2, Link1, Link2, Image,LinkText1,LinkText2 } = props
   return (
     <>
       <div className="bg-black py-5 banner-career">
@@ -25,9 +27,9 @@ export default function CareersBanner(props: CareerBannerProps) {
                 <div className="col-md-6">
                   <div>
                     <h6 className="text-white fw-light para">{Title1}</h6>
-                    <Link to="" className="text-decoration-none">
+                    <Link to={Link1!} className="text-decoration-none">
                       <p className="light-green para">
-                        {Link1}{' '}
+                        {LinkText1}{' '}
                         <i className="fas fa-arrow-right light-green"></i>
                       </p>
                     </Link>
@@ -36,9 +38,9 @@ export default function CareersBanner(props: CareerBannerProps) {
                 <div className="col-md-6">
                   <div>
                     <h6 className="text-white fw-light para">{Title2} </h6>
-                    <Link to="" className="text-decoration-none">
+                    <Link to={Link2!} className="text-decoration-none">
                       <p className="light-green para">
-                        {Link2}{' '}
+                        {LinkText2}{' '}
                         <i className="fas fa-arrow-right light-green"></i>
                       </p>
                     </Link>

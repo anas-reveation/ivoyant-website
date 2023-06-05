@@ -203,6 +203,8 @@ export default function Careers() {
         Subheading={result?.data?.careers?.data[0]?.attributes?.Subheading}
         Link1={result?.data?.careers?.data[0]?.attributes?.Link1}
         Link2={result?.data?.careers?.data[0]?.attributes?.Link2}
+        LinkText1={result?.data?.careers?.data[0]?.attributes?.LinkText1}
+        LinkText2={result?.data?.careers?.data[0]?.attributes?.LinkText2}
         Title1={result?.data?.careers?.data[0]?.attributes?.Title1}
         Title2={result?.data?.careers?.data[0]?.attributes?.Title2}
         Image={
