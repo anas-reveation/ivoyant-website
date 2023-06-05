@@ -21,7 +21,7 @@ export async function loader() {
     data: result,
     Slugdata,
     ENV: {
-      STRAPI_URL: process.env.STRAPI_URL,
+      STRAPI_URL: "https://ivoyant-strapi.azurewebsites.net",
     },
   })
 }
