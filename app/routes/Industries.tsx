@@ -24,7 +24,6 @@ export async function loader() {
 export default function Industries() {
   const result = useLoaderData<typeof loader>()
 
-
   return (
     <>
       <Helmet>
@@ -34,6 +33,11 @@ export default function Industries() {
         {result?.data?.industry?.data?.attributes?.IndustriesSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.industry?.data?.attributes?.IndustriesSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>

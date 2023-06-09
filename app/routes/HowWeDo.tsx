@@ -9,7 +9,6 @@ import { useLoaderData } from '@remix-run/react'
 import { GetHowWeDo } from '~/graphQl/HomeQuery'
 import { Helmet } from 'react-helmet'
 
-
 export async function loader() {
   const result = await graphcmsClient.request(GetHowWeDo)
   return json({
@@ -22,11 +21,10 @@ export async function loader() {
 
 export default function HowWeDo() {
   const result = useLoaderData<typeof loader>()
-  
 
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>
           {result?.data?.howWedos?.data[0]?.attributes?.HowWedoSeo?.Title}
         </title>
@@ -35,17 +33,26 @@ export default function HowWeDo() {
             return <meta name={d?.Title} content={d?.Description}></meta>
           }
         )}
+        {result?.data?.howWedos?.data[0]?.attributes?.HowWedoSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
+          }
+        )}
       </Helmet>
       <HowWeBanner
         Heading={result?.data?.howWedos?.data[0]?.attributes?.Banner?.Heading}
-        Subheading={result?.data?.howWedos?.data[0]?.attributes?.Banner?.Subheading}
+        Subheading={
+          result?.data?.howWedos?.data[0]?.attributes?.Banner?.Subheading
+        }
         image={
           result.ENV.STRAPI_URL +
-          result?.data?.howWedos?.data[0]?.attributes?.Banner?.Image?.data?.attributes
-            ?.url
+          result?.data?.howWedos?.data[0]?.attributes?.Banner?.Image?.data
+            ?.attributes?.url
         }
       />
-      <h4 className="fw-600 text-center py-4">{result?.data?.howWedos?.data[0]?.attributes?.SecondHeading}</h4>
+      <h4 className="fw-600 text-center py-4">
+        {result?.data?.howWedos?.data[0]?.attributes?.SecondHeading}
+      </h4>
       <div className="container">
         <div className="row justify-content-md-between justify-content-center">
           {result?.data?.howWedos?.data[0]?.attributes?.SecondCard.map(
@@ -60,20 +67,26 @@ export default function HowWeDo() {
               )
             }
           )}
-      </div>
+        </div>
       </div>
       <HowWeMiddle
         Heading={result?.data?.howWedos?.data[0]?.attributes?.ThirdHeading}
-        Subheading={result?.data?.howWedos?.data[0]?.attributes?.ThirdSubheading}
+        Subheading={
+          result?.data?.howWedos?.data[0]?.attributes?.ThirdSubheading
+        }
       />
       <DigitalProducts />
       <OurMethodology
-        Heading={result?.data?.howWedos?.data[0]?.attributes?.LastSection?.Heading}
-        Subheading={result?.data?.howWedos?.data[0]?.attributes?.LastSection?.Subheading}
+        Heading={
+          result?.data?.howWedos?.data[0]?.attributes?.LastSection?.Heading
+        }
+        Subheading={
+          result?.data?.howWedos?.data[0]?.attributes?.LastSection?.Subheading
+        }
         image={
           result.ENV.STRAPI_URL +
-          result?.data?.howWedos?.data[0]?.attributes?.LastSection?.Image?.data?.attributes
-            ?.url
+          result?.data?.howWedos?.data[0]?.attributes?.LastSection?.Image?.data
+            ?.attributes?.url
         }
       />
       <hr className="m-0"></hr>

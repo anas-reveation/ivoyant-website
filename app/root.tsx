@@ -14,15 +14,20 @@ import { json } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 import { graphcmsClient } from '~/lib/graphcms'
 import { GetFooter } from '~/graphQl/HomeQuery'
-
+import { GetIndustriesSlugData } from '~/graphQl/HomeQuery'
+import { GetTechnologyPracticeSlug } from '~/graphQl/HomeQuery'
 
 export async function loader() {
   const result = await graphcmsClient.request(GetFooter)
+  const Slugdata = await graphcmsClient.request(GetIndustriesSlugData)
+  const SlugData1 = await graphcmsClient.request(GetTechnologyPracticeSlug)
+
   return json({
     data: result,
+    Slugdata,
+    SlugData1,
     ENV: {
       STRAPI_URL: process.env.STRAPI_URL,
-      
     },
   })
 }
@@ -30,7 +35,6 @@ export async function loader() {
 export default function App() {
   // const ENV = useLoaderData<typeof loader>()
   const result = useLoaderData<typeof loader>()
-
 
   return (
     <html lang="en">
@@ -55,15 +59,15 @@ export default function App() {
           crossOrigin="anonymous"
         ></script>
 
-        <Footer 
-        // BaseUrl={ENV?.ENV?.STRAPI_URL} 
+        <Footer
+        // BaseUrl={ENV?.ENV?.STRAPI_URL}
         />
       </body>
     </html>
   )
 }
 
-export function ErrorBoundary({error}:any){
+export function ErrorBoundary({ error }: any) {
   return (
     <html lang="en">
       <head>
@@ -80,7 +84,9 @@ export function ErrorBoundary({error}:any){
         <main>
           <h1>Page Not Found</h1>
           <p>{error?.message}</p>
-          <h2>back to  <Link to="/">home page</Link></h2>
+          <h2>
+            back to <Link to="/">home page</Link>
+          </h2>
         </main>
         <ScrollRestoration />
         <Scripts />
@@ -90,8 +96,6 @@ export function ErrorBoundary({error}:any){
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
           crossOrigin="anonymous"
         ></script>
-
-       
       </body>
     </html>
   )

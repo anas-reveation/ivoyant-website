@@ -27,6 +27,21 @@ import {
   unstable_createFileUploadHandler,
 } from '@remix-run/node'
 
+const fileFormatValidator = z
+  .object({
+    name: z.string(),
+    type: z.string(),
+    size: z.number(),
+  })
+  .refine((value) => {
+    const allowedFormats = ['.pdf', '.doc', '.docx', '.rtf']
+    const fileExtension = value.name
+      .substring(value.name.lastIndexOf('.'))
+      .toLowerCase()
+    return allowedFormats.includes(fileExtension)
+  })
+  .transform((value) => value.name)
+
 export const validator = withZod(
   z.object({
     FirstName: z.string().min(1, { message: 'First name is required' }),
@@ -37,6 +52,7 @@ export const validator = withZod(
     Skills__c: z.string().min(1, { message: 'Filed name is required' }),
     Exprience__c: z.string().min(1, { message: 'Filed name is required' }),
     City__c: z.string().min(1, { message: 'Filed name is required' }),
+    fileUpload: fileFormatValidator,
   })
 )
 
@@ -186,6 +202,21 @@ export default function Careers() {
 
   const result = useLoaderData<typeof loader>()
 
+  // // Inside your component
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+
+  useEffect(() => {
+    if (data?.success == true) {
+      setShowSuccessMessage(true)
+
+      const timer = setTimeout(() => {
+        setShowSuccessMessage(false)
+      }, 2000)
+      return () => clearTimeout(timer)
+    }
+    // Clear the timer when the component unmounts
+  }, [data?.success])
+
   return (
     <div>
       <Helmet>
@@ -195,6 +226,11 @@ export default function Careers() {
         {result?.data?.careers?.data[0]?.attributes?.CareerSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.careers?.data[0]?.attributes?.CareerSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>
@@ -238,6 +274,7 @@ export default function Careers() {
               validator={validator}
               method="post"
               encType="multipart/form-data"
+              resetAfterSubmit
             >
               <h4 className="fw-bold">Prospective Posts</h4>
               <h5 className="my-5">Post Your Resume</h5>
@@ -332,6 +369,13 @@ export default function Careers() {
                     />
                   </div>
                 </div>
+                {showSuccessMessage && (
+                  <div className="col-12 grey-bg py-2 my-3">
+                    <h5 className="text-black mb-0 mx-2">
+                      Form Submitted Successfully
+                    </h5>
+                  </div>
+                )}
               </div>
             </ValidatedForm>
           </div>

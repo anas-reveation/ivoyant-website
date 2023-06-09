@@ -52,7 +52,7 @@ export default function JoinTeam() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown link
+                All Locations
               </a>
 
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">

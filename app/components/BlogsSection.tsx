@@ -5,7 +5,8 @@ import { Link } from '@remix-run/react'
 
 export default function BlogsSection() {
   const result = useLoaderData<typeof loader>()
-  
+  console.log(result)
+
   return (
     <>
       <div className="container my-4">
@@ -37,7 +38,7 @@ export default function BlogsSection() {
                     <h5 className="py-4">{d.attributes?.CardTitle}</h5>
                     <hr className="my-0 opacity-n white-text" />
                     <Link
-                      to={d.attributes?.SlugLink}
+                      to={d.attributes?.Slug}
                       style={{ textDecoration: 'none' }}
                     >
                       <div className="row align-items-center ">

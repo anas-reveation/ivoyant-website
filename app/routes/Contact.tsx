@@ -28,6 +28,7 @@ export const validator = withZod(
       .string()
       .min(1, { message: 'Email is required' })
       .email('Must be a valid email'),
+    Message: z.string().min(1, { message: 'Please write a meesage' }),
     Phone: z
       .string()
       .regex(/^\d+$/, { message: 'Phone number must be numeric' })
@@ -91,7 +92,7 @@ export async function action({ request }: DataFunctionArgs) {
   }
   await accessToken()
 
-  return json({ success: true })
+  return json({ success: true, result: result })
 }
 
 async function submitData(formData: any, accessToken: any, instanceUrl: any) {
@@ -112,24 +113,31 @@ async function submitData(formData: any, accessToken: any, instanceUrl: any) {
         Phone: `${formData.Phone}`,
 
         Message__c: `${formData.Message}`,
-        Company: 'CONTACTUS',
+        Company: '_',
+
         LeadSource: 'CONTACT_US',
       },
 
       config
     )
     try {
-      await axios.post(
-        `https://reveationlabs2-dev-ed.develop.my.salesforce.com/services/data/v57.0/sobjects/ContentVersion`,
-        {
-          Title: 'My file.txt',
-          PathOnClient: 'simple',
-          ContentLocation: 'S',
-          FirstPublishLocationId: `${response.data.id}`,
-          VersionData: 'SEkgVGhpcyBpcyBUZXN0IERvY3VtbmV0',
-        },
-        config
-      )
+      await axios
+        .post(
+          `https://reveationlabs2-dev-ed.develop.my.salesforce.com/services/data/v57.0/sobjects/ContentVersion`,
+          {
+            Title: 'My file.txt',
+            PathOnClient: 'simple',
+            ContentLocation: 'S',
+            FirstPublishLocationId: `${response.data.id}`,
+            VersionData: 'SEkgVGhpcyBpcyBUZXN0IERvY3VtbmV0',
+          },
+          config
+        )
+        .then(() => {
+          {
+            formData.FirstName = null
+          }
+        })
     } catch (err) {
       console.log(err)
     }
@@ -142,14 +150,19 @@ export default function Home() {
   const result = useLoaderData<typeof loader>()
 
   const data = useActionData()
-
-  let formRef = useRef<HTMLFormElement>(null)
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
   useEffect(() => {
     if (data?.success == true) {
-      formRef.current?.reset()
+      setShowSuccessMessage(true)
+
+      const timer = setTimeout(() => {
+        setShowSuccessMessage(false)
+      }, 2000)
+      return () => clearTimeout(timer)
     }
-  }, [data])
+    // Clear the timer when the component unmounts
+  }, [data?.success])
 
   return (
     <div>
@@ -160,6 +173,11 @@ export default function Home() {
         {result?.data?.contact?.data?.attributes?.ContactUsSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.contact?.data?.attributes?.ContactUsSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>
@@ -203,7 +221,11 @@ export default function Home() {
               </div>
             </div>
             <div className="col-xl-6  col-md-7 col-lg-7 col-12 ">
-              <ValidatedForm validator={validator} method="post">
+              <ValidatedForm
+                validator={validator}
+                method="post"
+                resetAfterSubmit
+              >
                 {/* <p className="text-white text-end">Required *</p> */}
                 <FormInput
                   name="FirstName"
@@ -241,6 +263,13 @@ export default function Home() {
                     width="100px"
                   />
                 </div>
+                {showSuccessMessage && (
+                  <div className="col-12 grey-bg py-2 my-3">
+                    <h5 className="text-black mb-0 mx-2">
+                      Form Submitted Successfully
+                    </h5>
+                  </div>
+                )}
               </ValidatedForm>
             </div>
           </div>

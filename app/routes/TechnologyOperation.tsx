@@ -9,11 +9,11 @@ import { marked } from 'marked'
 import { Helmet } from 'react-helmet'
 export async function loader() {
   const result = await graphcmsClient.request(GetTechnologyOperation)
-  const content1 =
-    result?.technologyOperation?.data?.attributes?.RichTextData
+  const content1 = result?.technologyOperation?.data?.attributes?.RichTextData
   const technologyRich = marked(content1)
   return json({
-    data: result,technologyRich,
+    data: result,
+    technologyRich,
     ENV: {
       STRAPI_URL: process.env.STRAPI_URL,
     },
@@ -22,16 +22,24 @@ export async function loader() {
 
 export default function TechnologyOperation() {
   const result = useLoaderData<typeof loader>()
-  
+
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>
-          {result?.data?.technologyOperation?.data?.attributes?.TechnologyOperationSeo?.Title}
+          {
+            result?.data?.technologyOperation?.data?.attributes
+              ?.TechnologyOperationSeo?.Title
+          }
         </title>
         {result?.data?.technologyOperation?.data?.attributes?.TechnologyOperationSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.technologyOperation?.data?.attributes?.TechnologyOperationSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>

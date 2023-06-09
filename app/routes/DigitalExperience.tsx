@@ -19,32 +19,54 @@ export async function loader() {
 
 export default function DigitalExperience() {
   const result = useLoaderData<typeof loader>()
-  
+
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>
-          {result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalExprienceSeo?.Title}
+          {
+            result?.data?.digitalExpriences?.data[0]?.attributes
+              ?.DigitalExprienceSeo?.Title
+          }
         </title>
         {result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalExprienceSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
           }
         )}
+        {result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalExprienceSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
+          }
+        )}
       </Helmet>
       <ServicesBanner
-        heading={result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalBanner?.Heading}
-        subheading={result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalBanner?.Subheading}
+        heading={
+          result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalBanner
+            ?.Heading
+        }
+        subheading={
+          result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalBanner
+            ?.Subheading
+        }
         imageurl={
           result.ENV.STRAPI_URL +
-          result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalBanner?.Image?.data?.attributes
-            ?.url
+          result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalBanner
+            ?.Image?.data?.attributes?.url
         }
-        leftheading={result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalBanner?.Title}
-        rightDescription={result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalBanner?.Description}
+        leftheading={
+          result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalBanner
+            ?.Title
+        }
+        rightDescription={
+          result?.data?.digitalExpriences?.data[0]?.attributes?.DigitalBanner
+            ?.Description
+        }
       />
       <DesignProcess
-        Heading={result?.data?.digitalExpriences?.data[0]?.attributes?.SecondHeading}
+        Heading={
+          result?.data?.digitalExpriences?.data[0]?.attributes?.SecondHeading
+        }
         Image={
           result.ENV.STRAPI_URL +
           result?.data?.digitalExpriences?.data[0]?.attributes?.SecondImg?.data

@@ -34,6 +34,11 @@ export default function PracticeDetail() {
             return <meta name={d?.Title} content={d?.Description}></meta>
           }
         )}
+        {maindata?.data?.attributes?.TechnologySlugSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
+          }
+        )}
       </Helmet>
       <PracticeDetailBanner
         Heading={maindata?.data?.attributes?.Heading}

@@ -15,7 +15,7 @@ export default function ServicesBanner(props: ServiceBannerProps) {
         <div className="container">
           <div className="row align-items-center justify-content-between">
             <div className="col-4"></div>
-            <div className="row col-12 col-md-7 white-text my-5   banner-float">
+            <div className="row col-12 col-md-6 white-text my-5   banner-float">
               <h2 className="col-12 fw-600 ">{heading}</h2>
               <p className="col-12 para light-grey-text pt-4 fw-normal">
                 {subheading}

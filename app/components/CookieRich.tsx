@@ -7,6 +7,7 @@ export default function CookieRich() {
     <>
       <div className="container my-5">
         <div
+          className="richtext"
           dangerouslySetInnerHTML={{
             __html: result?.cookieRichText,
           }}

@@ -8,18 +8,18 @@ import { GetTechnologyTransformation } from '~/graphQl/HomeQuery'
 import { marked } from 'marked'
 import { Helmet } from 'react-helmet'
 
-
 export async function loader() {
   const result = await graphcmsClient.request(GetTechnologyTransformation)
-  const content =
-    result?.technologyTransformation?.data?.attributes?.RichText
-    
-    const technologyRich = content.map((item: any) => ({
-      richText: marked(item.RichText),
-      secondSectionImage: item.SecondSectionImage,
-    }));
-    return json({
-    data: result,technologyRich,content,
+  const content = result?.technologyTransformation?.data?.attributes?.RichText
+
+  const technologyRich = content.map((item: any) => ({
+    richText: marked(item.RichText),
+    secondSectionImage: item.SecondSectionImage,
+  }))
+  return json({
+    data: result,
+    technologyRich,
+    content,
     ENV: {
       STRAPI_URL: process.env.STRAPI_URL,
     },
@@ -29,17 +29,23 @@ export async function loader() {
 export default function TechnologyTransformation() {
   const result = useLoaderData<typeof loader>()
 
-  
-
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>
-          {result?.data?.technologyTransformation?.data?.attributes?.TechnologyTransformationSeo?.Title}
+          {
+            result?.data?.technologyTransformation?.data?.attributes
+              ?.TechnologyTransformationSeo?.Title
+          }
         </title>
         {result?.data?.technologyTransformation?.data?.attributes?.TechnologyTransformationSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.technologyTransformation?.data?.attributes?.TechnologyTransformationSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>

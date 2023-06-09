@@ -10,9 +10,10 @@ import { Helmet } from 'react-helmet'
 
 export async function loader() {
   const result = await graphcmsClient.request(GetTechnologyPractice)
-  const SlugData=await graphcmsClient.request(GetTechnologyPracticeSlug)
+  const SlugData = await graphcmsClient.request(GetTechnologyPracticeSlug)
   return json({
-    data: result,SlugData,
+    data: result,
+    SlugData,
     ENV: {
       STRAPI_URL: process.env.STRAPI_URL,
     },
@@ -34,6 +35,11 @@ export default function TechnologyPractice() {
         {result?.data?.technologyPractices?.data[0]?.attributes?.TechnologySeo[0]?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.technologyPractices?.data[0]?.attributes?.TechnologySeo[0]?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>

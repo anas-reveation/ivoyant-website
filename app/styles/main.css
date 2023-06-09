@@ -70,6 +70,24 @@
 .pl-14 {
     margin-left: -20px;
 }
+.navbar-nav .nav-link.active{
+    font-weight: 600;
+    color: var(--light-green-color)!important;
+}
+.navbar-nav .nav-link:hover{
+    color: var(--light-green-color)!important;
+    font-weight: 600;
+
+
+}
+.nav-link.active{
+    font-weight: 600;
+    color: var(--light-green-color)!important;
+}
+.nav-link:hover{
+    font-weight: 600;
+    color: var(--light-green-color)!important;
+}
 
 .accordion-button::after {
     background-image: url('public/images/Home/accord.svg')
@@ -97,7 +115,7 @@
 }
 
 .msg-h {
-    min-height: 7em !important;
+    min-height: 19em !important;
 }
 .msg-h-s {
     min-height: 9rem !important;
@@ -613,6 +631,68 @@ nav-pills .show>.nav-link,
 .map-container{
     width: 100%;
     height: 600px;
+}
+.richtext h4 {
+    padding: 20px 0;
+}
+.richtext h6 {
+    font-family: 'Montserrat', sans-serif ;
+    font-weight: 400;
+}
+.richtext h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 15px 0;
+}
+.gradient-background {
+    background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  }
+
+.what-we .dropdown {
+    position: unset;
+}  
+.what-we .what-we-are .dropdown-menu {
+    padding: 0 49% 0 35%;
+    min-height: 600px;
+    
+    --bs-dropdown-border-color: null;
+    --bs-dropdown-border-radius: null;
+    --bs-dropdown-link-hover-color: var(--light-green-color);
+    --bs-dropdown-link-hover-bg: null;
+    --bs-dropdown-link-color: white;
+    background: rgb(0 0 0 / 85%) !important;
+
+
+
+}
+.what-we .resource .dropdown-menu {
+    padding: 0 28% 0 61%;
+    min-height: 600px;
+    
+    --bs-dropdown-border-color: null;
+    --bs-dropdown-border-radius: null;
+    --bs-dropdown-link-hover-color: var(--light-green-color);
+    --bs-dropdown-link-hover-bg: null;
+    --bs-dropdown-link-color: white;
+    background: rgb(0 0 0 / 85%) !important;
+
+
+
+}
+.what-we  .dropdown-menu .dropdown-submenu {
+    top: 0;
+    min-height:100px!important ;
+    background: rgba(0, 0, 0, 0)!important;
+
+}
+.what-we .dropdown-menu .dropdown-item{
+    --bs-dropdown-item-padding-y: 0.8rem;
+
+}
+.what-we .dropdown-menu .dropdown-item:active{
+    background-color: black!important;
+    color: white!important;
+
 }
 
 @media (max-width: 767px) {

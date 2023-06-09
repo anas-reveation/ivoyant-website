@@ -20,7 +20,6 @@ export async function loader() {
 
 export default function WhoeWeAre() {
   const result = useLoaderData<typeof loader>()
-  
 
   return (
     <div>
@@ -31,6 +30,11 @@ export default function WhoeWeAre() {
         {result?.data?.whoWeAres?.data[0]?.attributes?.WhoWeAre?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.whoWeAres?.data[0]?.attributes?.WhoWeAre?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>

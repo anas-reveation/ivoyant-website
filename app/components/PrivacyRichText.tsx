@@ -7,7 +7,8 @@ export default function PrivacyRich() {
   return (
     <>
       <div className="container my-5">
-        <div 
+        <div
+          className="richtext"
           dangerouslySetInnerHTML={{
             __html: result?.privacyRichText,
           }}

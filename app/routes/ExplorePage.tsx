@@ -18,7 +18,7 @@ export async function loader() {
 
 export default function ExplorePage() {
   const result = useLoaderData<typeof loader>()
-  
+
   return (
     <>
       <Helmet>
@@ -31,6 +31,11 @@ export default function ExplorePage() {
         {result?.data?.bringWholeSelves?.data[0]?.attributes?.BringWholeSelfSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.bringWholeSelves?.data[0]?.attributes?.BringWholeSelfSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>
@@ -92,21 +97,21 @@ export default function ExplorePage() {
       </div>
       <div className="container my-4">
         <div className="row ">
-          {result?.data?.bringWholeSelves?.data[0]?.attributes
-                    ?.LastSectionCard.map((d: any) => {
-            return (
-              <>
-                <BringCard
-                  title={d?.Title}
-                  description={d?.Description}
-                  imageurl={
-                    result?.ENV.STRAPI_URL +
-                    d?.Image?.data?.attributes?.url
-                  }
-                />
-              </>
-            )
-          })}
+          {result?.data?.bringWholeSelves?.data[0]?.attributes?.LastSectionCard.map(
+            (d: any) => {
+              return (
+                <>
+                  <BringCard
+                    title={d?.Title}
+                    description={d?.Description}
+                    imageurl={
+                      result?.ENV.STRAPI_URL + d?.Image?.data?.attributes?.url
+                    }
+                  />
+                </>
+              )
+            }
+          )}
         </div>
       </div>
     </>

@@ -7,10 +7,10 @@ type MyInputProps = {
   divClass?: string
   textbox?: string
   selectbox?: string
-  file?:string
+  file?: string
 
-  formRef?:string
-  textColor?:string
+  formRef?: string
+  textColor?: string
 }
 
 export const FormInput = ({
@@ -22,8 +22,7 @@ export const FormInput = ({
   selectbox,
   file,
   formRef,
-  textColor
-
+  textColor,
 }: MyInputProps) => {
   const { error, getInputProps } = useField(name)
   return (
@@ -56,11 +55,14 @@ export const FormInput = ({
           className={inputClass}
           placeholder={label}
           type={file}
-          ref={formRef}
         />
       )}
 
-      {error && <span className={`my-error-class text-white ${textColor}`}>{error}</span>}
+      {error && (
+        <span className={`my-error-class text-white ${textColor}`}>
+          {error}
+        </span>
+      )}
     </div>
   )
 }

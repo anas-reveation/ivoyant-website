@@ -24,15 +24,17 @@ export async function loader({ params }: any) {
 export default function Industries() {
   const maindata = useLoaderData<typeof loader>()
   return (
-
     <>
-     <Helmet>
-        <title>
-          {maindata?.data?.attributes?.IndustrySlugSeo?.Title}
-        </title>
+      <Helmet>
+        <title>{maindata?.data?.attributes?.IndustrySlugSeo?.Title}</title>
         {maindata?.data?.attributes?.IndustrySlugSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {maindata?.data?.attributes?.IndustrySlugSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>

@@ -8,15 +8,14 @@ import PrivacyConditionRich from '~/components/PrivacyRichText'
 import { marked } from 'marked'
 import TermConditionRich from '~/components/TermConditionRich'
 
-
-
 export async function loader() {
   const result = await graphcmsClient.request(GetTermsCondition)
- const conditionRich = result?.termsConditons?.data[0]?.attributes?.RichContent
-    
+  const conditionRich = result?.termsConditons?.data[0]?.attributes?.RichContent
+
   const conditonRichText = marked(conditionRich)
   return json({
-    data: result,conditonRichText,
+    data: result,
+    conditonRichText,
     ENV: {
       STRAPI_URL: process.env.STRAPI_URL,
     },
@@ -25,7 +24,6 @@ export async function loader() {
 
 export default function TermsCondition() {
   const result = useLoaderData<typeof loader>()
-  
 
   return (
     <>
@@ -41,6 +39,11 @@ export default function TermsCondition() {
             return <meta name={d?.Title} content={d?.Description}></meta>
           }
         )}
+        {result?.data?.termsConditons?.data[0]?.attributes?.TermsConditionSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
+          }
+        )}
       </Helmet>
       <PolicyConditionBanner
         image={
@@ -50,7 +53,7 @@ export default function TermsCondition() {
         }
         Heading={result?.data?.termsConditons?.data[0]?.attributes?.Heading}
       />
-      <TermConditionRich/>
+      <TermConditionRich />
     </>
   )
 }

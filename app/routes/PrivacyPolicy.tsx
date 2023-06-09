@@ -9,11 +9,11 @@ import PrivacyRich from '~/components/PrivacyRichText'
 
 export async function loader() {
   const result = await graphcmsClient.request(GetPrivacyPolicy)
-  const privacyRich =
-    result?.privacyPolicies?.data[0]?.attributes?.RichContent
+  const privacyRich = result?.privacyPolicies?.data[0]?.attributes?.RichContent
   const privacyRichText = marked(privacyRich)
   return json({
-    data: result,privacyRichText,
+    data: result,
+    privacyRichText,
     ENV: {
       STRAPI_URL: process.env.STRAPI_URL,
     },
@@ -21,19 +21,24 @@ export async function loader() {
 }
 export default function PrivacyPolicy() {
   const result = useLoaderData<typeof loader>()
-  
 
   return (
     <>
       <Helmet>
         <title>
           {
-            result?.data?.privacyPolicies?.data[0]?.attributes?.PrivacySeo?.Title
+            result?.data?.privacyPolicies?.data[0]?.attributes?.PrivacySeo
+              ?.Title
           }
         </title>
         {result?.data?.privacyPolicies?.data[0]?.attributes?.PrivacySeo?.MetaTag?.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.privacyPolicies?.data[0]?.attributes?.PrivacySeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>
@@ -45,7 +50,7 @@ export default function PrivacyPolicy() {
             ?.attributes?.url
         }
       />
-      <PrivacyRich/>
+      <PrivacyRich />
     </>
   )
 }

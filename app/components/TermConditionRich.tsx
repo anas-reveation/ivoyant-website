@@ -5,8 +5,9 @@ export default function TermConditionRich() {
 
   return (
     <>
-      <div className="container my-5">
+      <div className="container my-4">
         <div
+          className="richtext"
           dangerouslySetInnerHTML={{
             __html: result?.conditonRichText,
           }}

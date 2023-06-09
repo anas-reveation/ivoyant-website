@@ -10,11 +10,11 @@ import CookieRich from '~/components/CookieRich'
 
 export async function loader() {
   const result = await graphcmsClient.request(GetCookiePolicies)
-  const cookieRich =
-    result?.cookiePolicies?.data[0]?.attributes?.RichContent
+  const cookieRich = result?.cookiePolicies?.data[0]?.attributes?.RichContent
   const cookieRichText = marked(cookieRich)
   return json({
-    data: result,cookieRichText,
+    data: result,
+    cookieRichText,
     ENV: {
       STRAPI_URL: process.env.STRAPI_URL,
     },
@@ -23,7 +23,6 @@ export async function loader() {
 
 export default function CookiePolicy() {
   const result = useLoaderData<typeof loader>()
-  
 
   return (
     <>
@@ -36,6 +35,11 @@ export default function CookiePolicy() {
             return <meta name={d?.Title} content={d?.Description}></meta>
           }
         )}
+        {result?.data?.cookiePolicies?.data[0]?.attributes?.CookieSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
+          }
+        )}
       </Helmet>
       <PolicyConditionBanner
         Heading={result?.data?.cookiePolicies?.data[0]?.attributes?.Heading}
@@ -45,7 +49,7 @@ export default function CookiePolicy() {
             ?.attributes?.url
         }
       />
-      <CookieRich/>
+      <CookieRich />
     </>
   )
 }

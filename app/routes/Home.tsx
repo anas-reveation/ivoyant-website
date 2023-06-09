@@ -12,7 +12,7 @@ import { Helmet } from 'react-helmet'
 
 export default function Home() {
   const result = useLoaderData<typeof loader>()
-  
+
   return (
     <>
       <Helmet>
@@ -22,6 +22,11 @@ export default function Home() {
         {result?.data?.homePages?.data[0]?.attributes?.HomePageSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.homePages?.data[0]?.attributes?.HomePageSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>

@@ -8,8 +8,6 @@ import { useLoaderData } from '@remix-run/react'
 import { GetLIfeAtIvoyant } from '~/graphQl/HomeQuery'
 import { Helmet } from 'react-helmet'
 
-
-
 export async function loader() {
   const result = await graphcmsClient.request(GetLIfeAtIvoyant)
   return json({
@@ -22,17 +20,24 @@ export async function loader() {
 
 export default function LifeAtIvoyant() {
   const result = useLoaderData<typeof loader>()
-  
 
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>
-          {result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.LifeAtIvoyantSeo?.Title}
+          {
+            result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.LifeAtIvoyantSeo
+              ?.Title
+          }
         </title>
         {result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.LifeAtIvoyantSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.LifeAtIvoyantSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>
@@ -44,7 +49,7 @@ export default function LifeAtIvoyant() {
             result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.BgImage?.data
               ?.attributes?.url
           })`,
-          backgroundSize:"100% 100%"
+          backgroundSize: '100% 100%',
         }}
       >
         <div className="container">

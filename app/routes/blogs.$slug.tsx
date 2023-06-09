@@ -19,6 +19,7 @@ import { withZod } from '@remix-validated-form/with-zod'
 import { z } from 'zod'
 import axios from 'axios'
 import { useActionData } from '@remix-run/react'
+import { useEffect, useRef, useState } from 'react'
 
 import { DataFunctionArgs, json, redirect } from '@remix-run/node'
 import FormButton from '~/components/FormButtom'
@@ -40,8 +41,8 @@ export async function loader({ params }: any) {
   const maindata = Slugdata?.blogsSlugs?.data.find(
     (card: any) => card.attributes.Slug === slugid
   )
-  const content = Slugdata?.blogsSlugs?.data[0]?.attributes?.RichContent
-  const innerhtml = marked(content)
+  const content = Slugdata?.blogsSlugs?.data[5]?.attributes?.RichContent
+  const innerhtml = marked(content!)
 
   return json({
     data: maindata,
@@ -131,13 +132,34 @@ async function submitData(formData: any, accessToken: any, instanceUrl: any) {
 
 export default function BlogsSlug() {
   const maindata = useLoaderData<typeof loader>()
+  console.log(maindata)
+  // const data = useActionData()
+
+  // const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+
+  // useEffect(() => {
+  //   if (data?.success == true) {
+  //     setShowSuccessMessage(true)
+
+  //     const timer = setTimeout(() => {
+  //       setShowSuccessMessage(false)
+  //     }, 2000)
+  //     return () => clearTimeout(timer)
+  //   }
+  //   // Clear the timer when the component unmounts
+  // }, [data?.success])
   return (
     <>
       <Helmet>
-        <title>{maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BlogsSlugSeo?.Title}</title>
-        {maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BlogsSlugSeo?.MetaTag.map(
+        <title>{maindata?.data?.attributes?.BlogsSlugSeo?.Title}</title>
+        {maindata?.data?.attributes?.BlogsSlugSeo?.MetaTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.Title} content={d?.Description}></meta>
+          }
+        )}
+        {maindata?.data?.attributes?.BlogsSlugSeo?.PropertyTag.map(
+          (d: any, $index: any) => {
+            return <meta name={d?.property} content={d?.content}></meta>
           }
         )}
       </Helmet>
@@ -147,7 +169,8 @@ export default function BlogsSlug() {
         Date={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.CreateDate}
         imageurl={
           maindata.ENV.STRAPI_URL +
-          maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BgImageSlug?.data?.attributes?.url
+          maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BgImageSlug?.data
+            ?.attributes?.url
         }
       />
       <div className="bg-light-blue">
@@ -157,11 +180,16 @@ export default function BlogsSlug() {
               <div className="p-5 box-shadow">
                 {/* <h2 className="fw-600 py-3">{Heading} </h2> */}
                 <div
+                  className="richtext"
                   dangerouslySetInnerHTML={{ __html: maindata?.innerhtml }}
                 />
                 <div className="mt-4 ">
                   <h2 className="py-3">Leave a Message</h2>
-                  <ValidatedForm validator={validator} method="post">
+                  <ValidatedForm
+                    validator={validator}
+                    method="post"
+                    resetAfterSubmit
+                  >
                     <FormInput
                       name="FirstName"
                       label="Name*"
@@ -176,12 +204,6 @@ export default function BlogsSlug() {
                       divClass="mb-4"
                       textColor="black-text"
                     />
-                    {/* <FormInput
-                name="phone"
-                label="Phone"
-                inputClass="form-message rounded-0 form-input"
-                divClass="mb-4"
-              /> */}
 
                     <FormInput
                       name="Message"
@@ -192,25 +214,20 @@ export default function BlogsSlug() {
                       textColor="black-text"
                     />
 
-                    {/* <Link to="">
-                <Button
-                  text="Send"
-                  borderColor="white"
-                  color="text-white"
-                  className="mb-3 py-1 mt-5"
-                  width="100px"
-                />
-              </Link> */}
-                    {/* <div className="form-action mt-3">
-                <button type="submit">Submit</button>
-              </div> */}
                     <FormButton
                       text="Submit"
                       color="black"
-                      className="mb-3 py-1 fw-semibold para"
+                      className="mb-3 py-1 fw-semibold para mt-2"
                       width="134px"
                       height="40px"
                     />
+                    {/* {showSuccessMessage && (
+                      <div className="col-12 grey-bg py-2 my-3">
+                        <h5 className="text-black mb-0 mx-2">
+                          Form Submitted Successfully
+                        </h5>
+                      </div>
+                    )} */}
                   </ValidatedForm>
                 </div>
               </div>
@@ -219,10 +236,14 @@ export default function BlogsSlug() {
               <SlugBioCard
                 Name={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Name}
                 Bio={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Bio}
-                SocialLinks={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.SocialLinks}
+                SocialLinks={
+                  maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes
+                    ?.SocialLinks
+                }
                 Image={
                   maindata.ENV.STRAPI_URL +
-                  maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BioImage?.data?.attributes?.url
+                  maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BioImage
+                    ?.data?.attributes?.url
                 }
                 ImgEnv={maindata.ENV.STRAPI_URL}
               />
@@ -233,18 +254,20 @@ export default function BlogsSlug() {
               <div className="mt-3 box-shadow p-5 bg-white">
                 <h3>Categories</h3>
                 <hr className="py-4" />
-                {maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Categorie.map((d: any) => {
-                  return (
-                    <div className="row justify-content-between mb-2">
-                      <div className="col-5">
-                        <p className="para">{d?.name}</p>
+                {maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Categorie.map(
+                  (d: any) => {
+                    return (
+                      <div className="row justify-content-between mb-2">
+                        <div className="col-5">
+                          <p className="para">{d?.name}</p>
+                        </div>
+                        <div className="col-3">
+                          <p className="para">({d?.value})</p>
+                        </div>
                       </div>
-                      <div className="col-3">
-                        <p className="para">({d?.value})</p>
-                      </div>
-                    </div>
-                  )
-                })}
+                    )
+                  }
+                )}
               </div>
               <div className="mt-3 box-shadow p-5 bg-white">
                 <h3>Popular Tags</h3>

@@ -8,37 +8,22 @@ import Button from './Button'
 
 export default function AgileConcept() {
   const result = useLoaderData<typeof loader>()
-  
+
   return (
     <div>
       <div className="row gy-4">
-        {result?.SlugData?.technologyPracticeSlugs?.data.map(
+        {result?.data?.technologyPractices?.data[0]?.attributes?.TechnologyThirdCard.map(
           (d: any, $index: any) => {
             return (
               <div className="col-md-4 col-12">
-                <Link
-                  to={`${d?.attributes?.Slug}`}
-                  className="text-decoration-none"
-                >
-                  <div className="bg-secondary p-4 msg-h">
-                    <h6 className="text-white para fw-600">
-                      {d?.attributes?.TitleMain}
-                    </h6>
-                    <p className="medium-grey f-15 mt-5 mb-4 fw-normal">
-                      {d?.attributes?.DescriptionMain}
-                    </p>
-                  </div>
-                </Link>
-
-                {/* <Link to={`${d?.attributes?.Slug}`}> */}
-                {/* <Button
-                    text="Read More"
-                    borderColor="black"
-                    color="black-text"
-                    className=""
-                    width="120px"
-                  /> */}
-                {/* </Link> */}
+                <div className="bg-secondary p-4 msg-h">
+                  <h6 className="text-white para fw-600 text-uppercase">
+                    {d?.Title}
+                  </h6>
+                  <p className="medium-grey f-15 mt-5 mb-4 fw-normal">
+                    {d?.Description}
+                  </p>
+                </div>
               </div>
             )
           }

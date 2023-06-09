@@ -10,17 +10,22 @@ export const GetHomePage = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           CaseShortHead
           CaseLongHead
-          CaseStudies{
+          CaseStudies {
             Title
             Description
             ReadMoreLink
-            Image{
-              data{
-                attributes{
+            Image {
+              data {
+                attributes {
                   name
                   url
                 }
@@ -125,6 +130,11 @@ export const GetWhoWeAre = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Testimonial {
@@ -202,6 +212,11 @@ export const GetBringWholeSelf = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Title3
@@ -254,6 +269,11 @@ export const GetCareersData = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Heading
@@ -301,6 +321,11 @@ export const GetLIfeAtIvoyant = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           LastSection {
@@ -383,6 +408,11 @@ export const GetHowWeDo = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           LastSection {
@@ -439,6 +469,11 @@ export const GetDigitalExprience = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           ThirdHeading
@@ -494,6 +529,11 @@ export const GetTechnologyTransformation = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Heading
@@ -541,6 +581,11 @@ export const GetTechnologyOperation = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Heading
@@ -623,6 +668,11 @@ export const GetIndustryPage = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           ThirdSection {
@@ -656,6 +706,11 @@ export const GetIndustriesSlugData = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Title
@@ -707,6 +762,11 @@ export const GetTechnologyPractice = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           TechnologyThirdCard {
@@ -762,6 +822,11 @@ export const GetTechnologyPracticeSlug = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Images {
@@ -798,6 +863,11 @@ export const GetPrivacyPolicy = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Image {
@@ -826,6 +896,11 @@ export const GetCookiePolicies = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Image {
@@ -854,6 +929,11 @@ export const GetTermsCondition = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Image {
@@ -886,6 +966,11 @@ export const GetBlogsPages = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           BgImage {
@@ -907,7 +992,7 @@ export const GetBlogsSlugs = gql`
     blogsSlugs {
       data {
         attributes {
-          Categorie{
+          Categorie {
             name
             value
           }
@@ -934,6 +1019,11 @@ export const GetBlogsSlugs = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           SocialLinks {
@@ -981,6 +1071,11 @@ export const GetConatcUs = gql`
             MetaTag {
               Title
               Description
+              hid
+            }
+            PropertyTag {
+              property
+              content
             }
           }
           Marked {
