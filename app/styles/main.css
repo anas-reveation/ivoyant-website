@@ -117,6 +117,10 @@
 .msg-h {
     min-height: 19em !important;
 }
+
+.msg-h-m {
+    min-height: 15em !important;
+}
 .msg-h-s {
     min-height: 9rem !important;
 }

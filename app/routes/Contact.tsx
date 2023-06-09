@@ -249,7 +249,7 @@ export default function Home() {
                 <FormInput
                   name="Message"
                   label="Message*"
-                  inputClass="grey-bg rounded-0 form-input  msg-h"
+                  inputClass="grey-bg rounded-0 form-input  msg-h-m"
                   divClass="mt-4"
                   textbox="true"
                 />
