@@ -41,7 +41,7 @@ export async function loader({ params }: any) {
   const maindata = Slugdata?.blogsSlugs?.data.find(
     (card: any) => card.attributes.Slug === slugid
   )
-  const content = Slugdata?.blogsSlugs?.data[5]?.attributes?.RichContent
+  const content = Slugdata?.blogsSlugs?.data[1]?.attributes?.RichContent
   const innerhtml = marked(content!)
 
   return json({
@@ -164,12 +164,12 @@ export default function BlogsSlug() {
         )}
       </Helmet>
       <BlogsSlugBanner
-        Heading={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Heading}
-        Name={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Name}
-        Date={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.CreateDate}
+        Heading={maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.Heading}
+        Name={maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.Name}
+        Date={maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.CreateDate}
         imageurl={
           maindata.ENV.STRAPI_URL +
-          maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BgImageSlug?.data
+          maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.BgImageSlug?.data
             ?.attributes?.url
         }
       />
@@ -234,15 +234,15 @@ export default function BlogsSlug() {
             </div>
             <div className="col-12 col-lg-5 mt-4 mt-lg-0 mb-5">
               <SlugBioCard
-                Name={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Name}
-                Bio={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Bio}
+                Name={maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.Name}
+                Bio={maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.Bio}
                 SocialLinks={
-                  maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes
+                  maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes
                     ?.SocialLinks
                 }
                 Image={
                   maindata.ENV.STRAPI_URL +
-                  maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BioImage
+                  maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.BioImage
                     ?.data?.attributes?.url
                 }
                 ImgEnv={maindata.ENV.STRAPI_URL}
@@ -254,7 +254,7 @@ export default function BlogsSlug() {
               <div className="mt-3 box-shadow p-5 bg-white">
                 <h3>Categories</h3>
                 <hr className="py-4" />
-                {maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Categorie.map(
+                {maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.Categorie.map(
                   (d: any) => {
                     return (
                       <div className="row justify-content-between mb-2">
