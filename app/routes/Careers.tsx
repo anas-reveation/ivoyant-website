@@ -228,7 +228,7 @@ export default function Careers() {
             return <meta name={d?.Title} content={d?.Description}></meta>
           }
         )}
-        {result?.data?.careers?.data[0]?.attributes?.CareerSeo?.PropertyTag.map(
+        {result?.data?.careers?.data[0]?.attributes?.CareerSeoe?.PropertyTag.map(
           (d: any, $index: any) => {
             return <meta name={d?.property} content={d?.content}></meta>
           }
@@ -318,7 +318,8 @@ export default function Careers() {
                       { value: 'Three', label: 'Three' },
                     ]}
                     name="Exprience__c"
-                    selectedState="Exprience in years"
+                    selectedState="Experience
+                    in years"
                     inputClass="form-select form-select-lg mb-3 border-0 rounded-0 post-form para form-input "
                     textColor="black-text"
                   />
