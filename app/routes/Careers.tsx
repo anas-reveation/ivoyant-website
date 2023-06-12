@@ -33,13 +33,23 @@ const fileFormatValidator = z
     type: z.string(),
     size: z.number(),
   })
-  .refine((value) => {
-    const allowedFormats = ['.pdf', '.doc', '.docx', '.rtf']
-    const fileExtension = value.name
-      .substring(value.name.lastIndexOf('.'))
-      .toLowerCase()
-    return allowedFormats.includes(fileExtension)
+  .refine((value) => value.name && value.name.trim() !== '', {
+    message: 'Please upload a file.',
   })
+  .refine(
+    (value) => {
+      const allowedFormats = ['.pdf', '.doc', '.docx', '.rtf']
+      const fileExtension = value.name
+        .substring(value.name.lastIndexOf('.'))
+        .toLowerCase()
+      return allowedFormats.includes(fileExtension)
+    },
+    {
+      message:
+        'Invalid file format. Only .pdf, .doc, .docx, and .rtf are allowed.',
+    }
+  )
+
   .transform((value) => value.name)
 
 export const validator = withZod(
@@ -327,7 +337,7 @@ export default function Careers() {
                 <div className="col-md-6 col-6">
                   <FormInput
                     name="fileUpload"
-                    inputClass="  rounded-0 border-0 post-form text-dark para form-input"
+                    inputClass="  rounded-0 border-0 post-form text-dark para form-input pt-0"
                     divClass="mb-4"
                     file="file"
                     textColor="black-text"
