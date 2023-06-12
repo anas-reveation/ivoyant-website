@@ -10,7 +10,6 @@ export const GetHomePage = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -130,7 +129,6 @@ export const GetWhoWeAre = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -212,7 +210,6 @@ export const GetBringWholeSelf = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -269,7 +266,6 @@ export const GetCareersData = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -321,7 +317,6 @@ export const GetLIfeAtIvoyant = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -408,7 +403,6 @@ export const GetHowWeDo = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -469,7 +463,6 @@ export const GetDigitalExprience = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -529,7 +522,6 @@ export const GetTechnologyTransformation = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -581,7 +573,6 @@ export const GetTechnologyOperation = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -668,7 +659,6 @@ export const GetIndustryPage = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -706,7 +696,6 @@ export const GetIndustriesSlugData = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -762,7 +751,6 @@ export const GetTechnologyPractice = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -822,7 +810,6 @@ export const GetTechnologyPracticeSlug = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -863,7 +850,6 @@ export const GetPrivacyPolicy = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -896,7 +882,6 @@ export const GetCookiePolicies = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -929,7 +914,6 @@ export const GetTermsCondition = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -966,7 +950,6 @@ export const GetBlogsPages = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -1019,7 +1002,6 @@ export const GetBlogsSlugs = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
@@ -1071,7 +1053,6 @@ export const GetConatcUs = gql`
             MetaTag {
               Title
               Description
-              hid
             }
             PropertyTag {
               property
