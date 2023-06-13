@@ -63,7 +63,7 @@ export default function ExplorePage() {
               alt=""
             />
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-6 px-5">
             <h4 className="fw-600 black-text text-center py-4 mt-4">
               {result?.data?.bringWholeSelves?.data[0]?.attributes?.Title2}
             </h4>
