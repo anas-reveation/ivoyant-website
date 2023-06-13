@@ -10,7 +10,7 @@ export default function HowWeMiddle(props: MiddleBannerProps) {
 
   return (
     <>
-      <div className="container-fluid bg-black mt-3">
+      <div className="container-fluid bg-black mt-4">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-10 col-12 text-center py-5">

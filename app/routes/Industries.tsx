@@ -81,7 +81,7 @@ export default function Industries() {
       <div className=" bg-secondary border-bottom mt-5">
         <div className="container py-5">
           <div className="row justify-content-center white-text text-center">
-            <h2 className="fw-600 mb-0">
+            <h2 className="fw-600 mb-0 mt-5">
               {' '}
               {result?.data?.industry?.data?.attributes?.ThirdSection?.Title}
             </h2>

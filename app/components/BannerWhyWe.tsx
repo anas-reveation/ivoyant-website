@@ -23,7 +23,8 @@ export default function BannerWhyWe(props: BannerProps) {
             className="col-md-6 col-12 explore-bg"
             style={{
               backgroundImage: `url(${imageurl})`,
-              backgroundSize: '100% 100%',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
             }}
           ></div>
         </div>

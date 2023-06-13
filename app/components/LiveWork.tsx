@@ -13,7 +13,10 @@ export default function LiveWork() {
               {result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.SecondHeading}
             </h4>
             <h5 className="text-start fs-6">
-              {result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.SecondSubHeading}
+              {
+                result?.data?.lIfeAtIvoyants?.data[0]?.attributes
+                  ?.SecondSubHeading
+              }
             </h5>
           </div>
           <div className="container">
@@ -23,7 +26,7 @@ export default function LiveWork() {
                   return (
                     <>
                       <div className=" col-12 col-md-6 col-xl-3">
-                        <div className="bg-secondary p-4 min-15">
+                        <div className="bg-secondary p-4 min-15 h-100">
                           <div className="d-flex align-items-start mb-3">
                             <img
                               className="me-3 livework-h-w"

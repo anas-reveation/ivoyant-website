@@ -11,14 +11,13 @@ export default function WhyJoin() {
             return (
               <>
                 <div className="col-xl-4 col-md-6 col-12">
-                  <div className="bg-secondary p-4 min-15">
+                  <div className="bg-secondary p-4 min-15 h-100">
                     <div className="d-flex align-items-start mb-3">
                       <img
                         className="me-3 join-img"
                         alt=""
                         src={
-                          result.ENV.STRAPI_URL +
-                          d?.Icon?.data?.attributes?.url
+                          result.ENV.STRAPI_URL + d?.Icon?.data?.attributes?.url
                         }
                       />
                       <h6 className="text-white fw-600 para text-uppercase">

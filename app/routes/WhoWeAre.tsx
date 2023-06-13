@@ -41,7 +41,7 @@ export default function WhoeWeAre() {
       <div className="py-5 bg-black">
         <div className="container  banner-who">
           <div className="row align-items-center justify-content-between gy-3">
-            <h2 className="text-white mb-5 pb-3 text-md-start text-center">
+            <h2 className="text-white my-5 py-4 text-md-start text-center">
               {result?.data?.whoWeAres?.data[0]?.attributes?.Heading}
             </h2>
             {result?.data?.whoWeAres?.data[0]?.attributes?.BannerData.map(

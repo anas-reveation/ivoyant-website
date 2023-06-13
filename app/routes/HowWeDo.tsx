@@ -50,11 +50,11 @@ export default function HowWeDo() {
             ?.attributes?.url
         }
       />
-      <h4 className="fw-600 text-center py-4">
+      <h4 className="fw-600 text-center mb-0 py-4">
         {result?.data?.howWedos?.data[0]?.attributes?.SecondHeading}
       </h4>
       <div className="container">
-        <div className="row justify-content-md-between justify-content-center">
+        <div className="row justify-content-md-between justify-content-center gy-4">
           {result?.data?.howWedos?.data[0]?.attributes?.SecondCard.map(
             (d: any) => {
               return (

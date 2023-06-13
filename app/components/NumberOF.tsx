@@ -18,7 +18,7 @@ export default function NumberOF(props: NumbersProps) {
               src={imageurl}
             />
           </div>
-          <div className="col-8 col-md-8 white-text fw-600 lh-1p">
+          <div className="col-8 col-md-8 white-text fw-600 lh-1p ps-0">
             <h1 className="fw-600">{heading}</h1>
             <h6>{subheading}</h6>
           </div>

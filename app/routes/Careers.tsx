@@ -292,7 +292,7 @@ export default function Careers() {
                 <div className="col-md-6 col-6">
                   <FormInput
                     name="FirstName"
-                    label="First Name*"
+                    label="Name"
                     inputClass="  rounded-0 border-0 post-form text-dark para form-input"
                     divClass="mb-4 "
                     textColor="black-text"
@@ -314,7 +314,7 @@ export default function Careers() {
                 <div className="col-md-6 col-6">
                   <FormInput
                     name="Email"
-                    label="Email*"
+                    label="Email"
                     inputClass="  rounded-0 border-0 post-form text-dark para form-input"
                     divClass="mb-4"
                     textColor="black-text"

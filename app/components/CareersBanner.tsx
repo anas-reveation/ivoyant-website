@@ -7,21 +7,31 @@ export interface CareerBannerProps {
   Link1?: string
   Link2?: string
   Image?: string
-  LinkText1?:string
-  LinkText2?:string
+  LinkText1?: string
+  LinkText2?: string
 }
 
 export default function CareersBanner(props: CareerBannerProps) {
-  const { Heading, Subheading, Title1, Title2, Link1, Link2, Image,LinkText1,LinkText2 } = props
+  const {
+    Heading,
+    Subheading,
+    Title1,
+    Title2,
+    Link1,
+    Link2,
+    Image,
+    LinkText1,
+    LinkText2,
+  } = props
   return (
     <>
       <div className="bg-black py-5 banner-career">
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-12 d-flex flex-column mt-auto">
-              <div className="text-white">
+              <div className="text-white top-career">
                 <h2 className="">{Heading}</h2>
-                <h5 className="fw-light mt-3">{Subheading}</h5>
+                <h5 className="fw-light mt-4">{Subheading}</h5>
               </div>
               <div className="row mt-5 pt-5">
                 <div className="col-md-6">
