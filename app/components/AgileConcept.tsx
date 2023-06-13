@@ -16,11 +16,11 @@ export default function AgileConcept() {
           (d: any, $index: any) => {
             return (
               <div className="col-md-4 col-12">
-                <div className="bg-secondary p-4 msg-h">
-                  <h6 className="text-white para fw-600 text-uppercase">
+                <div className="bg-secondary p-4  h-100">
+                  <h6 className="text-white para fw-600 text-uppercase pt-3">
                     {d?.Title}
                   </h6>
-                  <p className="medium-grey f-15 mt-5 mb-4 fw-normal">
+                  <p className="medium-grey f-15 mt-5 mb-3 fw-normal">
                     {d?.Description}
                   </p>
                 </div>
