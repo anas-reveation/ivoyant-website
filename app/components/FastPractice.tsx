@@ -11,7 +11,7 @@ export default function FastPractice() {
             ?.TechnologySecond?.Title
         }
       </h4>
-      <p className="my-4 para fw-semibold">
+      <p className="my-4 para fw-500">
         {
           result?.data?.technologyPractices?.data[0]?.attributes
             ?.TechnologySecond?.Decsription

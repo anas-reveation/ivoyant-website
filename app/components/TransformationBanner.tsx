@@ -8,7 +8,7 @@ export default function TransformationBanner() {
     <>
       <div className="container ">
         <div className="row justify-content-center">
-          <h4 className="fw-600 py-3 text-center">
+          <h4 className="fw-600 pt-3 pb-5 text-center">
             {
               result?.data?.technologyTransformation?.data?.attributes
                 ?.SecondSectionHeading
@@ -24,7 +24,7 @@ export default function TransformationBanner() {
                 return (
                   <>
                     <li
-                      className="nav-item black-text border border-dark"
+                      className="nav-item black-text border border-dark s-act"
                       role="presentation"
                     >
                       <button
@@ -50,51 +50,49 @@ export default function TransformationBanner() {
         </div>
       </div>
       <div className="tab-content" id="pills-tabContent">
-        {result?.technologyRich.map(
-          (d: any, $index: any) => {
-            return (
-              <>
-                <div
-                  className={`tab-pane fade ${
-                    $index === 0
-                      ? 'show active overflow-hidden'
-                      : 'show overflow-hidden'
-                  }`}
-                  id={`pills-${result?.data?.technologyTransformation?.data?.attributes?.ButtonText[$index]?.ButtonId}`}
-                  role="tabpanel"
-                  aria-labelledby={`pills-${result?.data?.technologyTransformation?.data?.attributes?.ButtonText[$index]?.ButtonId}-tab`}
-                  key={$index}
-                >
-                  <div className="row justify-content-between my-3 ">
-                    <div className="col-xl-6 col-lg-12 col-md-12 col-12 ">
-                      <div className="row ">
-                        <div className="col-12 cult-m">
-                          <div></div>
-                          {/* <ReactMarkdown>{d?.RichText}</ReactMarkdown> */}
-                          {/* <ReactMarkdown children={d?.RichText} /> */}
-                          {/* <div>{d?.RichText}</div> */}
-                          <div
-                            dangerouslySetInnerHTML={{ __html: d?.richText }}
-                          />
-                          
-                        </div>
+        {result?.technologyRich.map((d: any, $index: any) => {
+          return (
+            <>
+              <div
+                className={`tab-pane fade ${
+                  $index === 0
+                    ? 'show active overflow-hidden'
+                    : 'show overflow-hidden'
+                }`}
+                id={`pills-${result?.data?.technologyTransformation?.data?.attributes?.ButtonText[$index]?.ButtonId}`}
+                role="tabpanel"
+                aria-labelledby={`pills-${result?.data?.technologyTransformation?.data?.attributes?.ButtonText[$index]?.ButtonId}-tab`}
+                key={$index}
+              >
+                <div className="row justify-content-between my-3 ">
+                  <div className="col-xl-6 col-lg-12 col-md-12 col-12 ">
+                    <div className="row ">
+                      <div className="col-12 cult-m">
+                        <div></div>
+                        {/* <ReactMarkdown>{d?.RichText}</ReactMarkdown> */}
+                        {/* <ReactMarkdown children={d?.RichText} /> */}
+                        {/* <div>{d?.RichText}</div> */}
+                        <div
+                          className="richtext"
+                          dangerouslySetInnerHTML={{ __html: d?.richText }}
+                        />
                       </div>
                     </div>
-                    <div className="col-xl-5 col-lg-12 col-md-12 col-12 ">
-                      <img
-                        src={
-                          result.ENV.STRAPI_URL +
-                          d?.secondSectionImage?.data?.attributes?.url
-                        }
-                        className="w-100"
-                      />
-                    </div>
+                  </div>
+                  <div className="col-xl-5 col-lg-12 col-md-12 col-12 ">
+                    <img
+                      src={
+                        result.ENV.STRAPI_URL +
+                        d?.secondSectionImage?.data?.attributes?.url
+                      }
+                      className="w-100"
+                    />
                   </div>
                 </div>
-              </>
-            )
-          }
-        )}
+              </div>
+            </>
+          )
+        })}
       </div>
     </>
   )

@@ -39,7 +39,7 @@ export default function PracticeBanner() {
       </div>
       <div className="bg-secondary">
         <div className="container">
-          <h5 className="text-white fw-normal lh-base py-4">
+          <h5 className="text-white fw-normal lh-base py-5">
             {
               result?.data?.technologyPractices?.data[0]?.attributes
                 ?.FirstSection?.Description
