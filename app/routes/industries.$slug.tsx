@@ -81,7 +81,9 @@ export default function Industries() {
         <div className="container py-5">
           <div className="row justify-content-center justify-content-md-between align-items-center">
             <div className="col-12 col-md-7 white-text">
-              <h2>{maindata?.data?.attributes?.ThirdSectionTitle}</h2>
+              <h4 className="lh-33 text-capitalize">
+                {maindata?.data?.attributes?.ThirdSectionTitle}
+              </h4>
             </div>
             <div className="col-12 col-md-5 lh-lg white-text">
               <ul className="para  fw-normal disc">

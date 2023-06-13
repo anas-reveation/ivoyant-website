@@ -76,6 +76,10 @@
 .pl-14 {
     margin-left: -20px;
 }
+
+.lh-33{
+    line-height: 33px;
+}
 .navbar-nav .nav-link.active{
     font-weight: 600;
     color: var(--light-green-color)!important;
