@@ -10,9 +10,9 @@ export default function PracticeDetailThird(props: DetailThirdProps) {
   return (
     <div className="bg-secondary py-4 border-bottom">
       <div className="container my-4 text-white">
-        <h2 className="fw-semibold">{Title1}</h2>
-        <p className="para mt-3 mb-4 f18">{Description1}</p>
-        <ul className="row gy-3 para">
+        <h2 className="fw-semibold mb-3">{Title1}</h2>
+        <h6 className="para mt-4 mb-5 fw-500">{Description1}</h6>
+        <ul className="row gy-4 para mb-5">
           {BulletsPoint?.map((d: any) => {
             return <li className="col-md-6">{d?.BulletPoints}</li>
           })}
