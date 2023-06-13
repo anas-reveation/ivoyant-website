@@ -49,12 +49,13 @@ export default function LifeAtIvoyant() {
             result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.BgImage?.data
               ?.attributes?.url
           })`,
-          backgroundSize: '100% 100%',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       >
         <div className="container">
           <div className="row align-items-center white-text align-content-center min-h-500">
-            <h5 className="fs-6 ">
+            <h5 className="fs-6 mb-4">
               {result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.ShortHeading}
             </h5>
             <h2 className=" col-10 fw-bold">

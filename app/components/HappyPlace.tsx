@@ -7,7 +7,7 @@ export default function HappyPlace() {
   return (
     <>
       <div className="container-fluid bg-secondary">
-        <h4 className="fw-bold py-4 white-text text-center">
+        <h4 className="fw-bold pt-4 white-text text-center">
           {result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.ForthHeading}{' '}
         </h4>
         <div

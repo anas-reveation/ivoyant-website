@@ -226,10 +226,10 @@ export default function Home() {
                 method="post"
                 resetAfterSubmit
               >
-                {/* <p className="text-white text-end">Required *</p> */}
+                <p className="text-white text-end">* Required </p>
                 <FormInput
                   name="FirstName"
-                  label="First Name*"
+                  label="Name*"
                   inputClass="grey-bg rounded-0 form-input"
                   divClass="mb-4"
                 />

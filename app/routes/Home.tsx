@@ -67,7 +67,7 @@ export default function Home() {
             }}
           >
             <div className="container py-5">
-              <div className="row justify-content-center justify-content-md-between gy-4">
+              <div className="row justify-content-center justify-content-md-between gy-4 ">
                 {result?.data?.homePages?.data[0]?.attributes?.ThirdCard.map(
                   (d: any) => {
                     return (

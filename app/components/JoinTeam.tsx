@@ -3,14 +3,14 @@ export default function JoinTeam() {
   return (
     <div className="bg-secondary py-5 mb-5">
       <div className="container">
-        <h4 className="fw-bold text-center text-white">Join Our Team</h4>
+        <h4 className="fw-bold text-center text-white my-5">Join Our Team</h4>
         <div className="row">
           <div className="col-4 col-md-3 margin-inherit text-lg-end text-md-start text-xl-end  pl-14">
             <p className="fw-light text-white para ">Filter By:</p>
           </div>
         </div>
         <div className="row col-12 justify-content-center gy-3">
-          <div className=" col-xl-2 col-lg-3 col-md-4 col-12">
+          <div className=" col-xl-2 col-lg-3 col-md-4 col-12 w-auto">
             <div className="dropdown">
               <a
                 className="btn btn-secondary dropdown-toggle w-12 rounded-0 join-btn para py-2 rounded-1"
@@ -20,7 +20,8 @@ export default function JoinTeam() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                All Categories
+                All Categories{' '}
+                <img className="ms-5" src="../WhyWe2/Vector_5.svg" />
               </a>
 
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -42,7 +43,7 @@ export default function JoinTeam() {
               </ul>
             </div>
           </div>
-          <div className="col-xl-2 col-lg-3 col-md-4 col-12">
+          <div className="col-xl-2 col-lg-3 col-md-4 col-12 w-auto">
             <div className="dropdown">
               <a
                 className="btn btn-secondary dropdown-toggle w-12 rounded-0 join-btn para py-2 rounded-1"
@@ -52,7 +53,8 @@ export default function JoinTeam() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                All Locations
+                All Locations{' '}
+                <img className="ms-5" src="../WhyWe2/Vector_5.svg" />
               </a>
 
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">

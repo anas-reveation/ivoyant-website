@@ -28,6 +28,12 @@
 .grey-bg {
     background-color: var(--grey-color) !important;
 }
+.img-ww{
+    object-fit: cover;
+}
+.top-career{
+    margin-top: 8rem;
+}
 
 .light-grey {
     background-color: var(--grey-color) !important;
@@ -119,7 +125,7 @@
 }
 
 .msg-h-m {
-    min-height: 15em !important;
+    min-height: 7em !important;
 }
 .msg-h-s {
     min-height: 9rem !important;
@@ -149,7 +155,8 @@
 }
 
 .join-btn::after {
-    margin-left: 2.7em;
+    /* margin-left: 2.7em; */
+    border: none;
 }
 
 .join-btn::placeholder {
@@ -740,6 +747,7 @@ nav-pills .show>.nav-link,
 
     .join-btn:after {
         margin-left: 10.9em;
+        
     }
 
     .img-ht {

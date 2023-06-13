@@ -32,11 +32,9 @@ export default function DigitalProducts(props: ModuleProps) {
                   return (
                     <>
                       <div className=" col-11 col-md-6 col-lg-3  white-text text-center align-content-center mb-3">
-                        <div className="bg-secondary module-card">
+                        <div className="bg-secondary module-card h-100">
                           <div className="col-12 py-3">
-                            <h5 className=" fw-600 ">
-                              {d?.Title}
-                            </h5>
+                            <h5 className=" fw-600 ">{d?.Title}</h5>
                             <p className="  f-14 fw-light lh-base pt-4 pb-0">
                               {d?.SubTitle}
                             </p>
