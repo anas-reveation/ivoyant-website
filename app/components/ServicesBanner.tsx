@@ -33,7 +33,7 @@ export default function ServicesBanner(props: ServiceBannerProps) {
             <div className="col-12 col-sm-4">
               <h3 className="fw-600">{leftheading}</h3>
             </div>
-            <div className="col-12 col-sm-7">
+            <div className="col-12 col-sm-8">
               <p className="para lh-base">{rightDescription}</p>
             </div>
           </div>

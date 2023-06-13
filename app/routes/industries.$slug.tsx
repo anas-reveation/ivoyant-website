@@ -41,7 +41,7 @@ export default function Industries() {
       <div className="container-fluid bg-black">
         <div className="container py-5">
           <div className="row align-items-center justify-content-between mt-5">
-            <div className="col-md-8 col-12">
+            <div className="col-md-7 col-12">
               <h2 className=" white-text pb-5">
                 {maindata?.data?.attributes?.FirstSection?.Heading}
               </h2>
