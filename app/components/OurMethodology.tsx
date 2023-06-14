@@ -16,7 +16,7 @@ export default function OurMethodology(props: MethodologyProps) {
               <h4 className="fw-600 white-text pb-4">{Heading} </h4>
               <p className="para white-text fw-light pb-4">{Subheading}</p>
             </div>
-            <img className="col-12 w-100" src={image} />
+            <img className="col-12 w-100" alt={Heading} src={image} />
           </div>
         </div>
       </div>

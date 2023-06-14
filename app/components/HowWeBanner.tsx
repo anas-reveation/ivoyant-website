@@ -20,7 +20,7 @@ export default function HowWeBanner(props: BannerProps) {
               </p>
             </div>
             <div className="col-12 col-md-7 d-none d-md-block ">
-              <img className="w-100" src={image} />
+              <img className="w-100" alt="how we do" src={image} />
             </div>
           </div>
         </div>

@@ -21,7 +21,11 @@ export default function JoinTeam() {
                 aria-expanded="false"
               >
                 All Categories{' '}
-                <img className="ms-5" src="../WhyWe2/Vector_5.svg" />
+                <img
+                  className="ms-5"
+                  alt="arrow"
+                  src="../WhyWe2/Vector_5.svg"
+                />
               </a>
 
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -54,7 +58,11 @@ export default function JoinTeam() {
                 aria-expanded="false"
               >
                 All Locations{' '}
-                <img className="ms-5" src="../WhyWe2/Vector_5.svg" />
+                <img
+                  className="ms-5"
+                  alt="arrow"
+                  src="../WhyWe2/Vector_5.svg"
+                />
               </a>
 
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">

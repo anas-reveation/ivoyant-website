@@ -22,7 +22,7 @@ export default function ServicesBanner(props: ServiceBannerProps) {
               </p>
             </div>
             <div className="col-12 col-md-6 d-none d-md-block ">
-              <img className="service-banner-w" src={imageurl} />
+              <img className="service-banner-w" alt={heading} src={imageurl} />
             </div>
           </div>
         </div>
