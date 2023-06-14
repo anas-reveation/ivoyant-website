@@ -25,8 +25,18 @@ import FormButton from '~/components/FormButtom'
 
 export const validator = withZod(
   z.object({
-    FirstName: z.string().min(1, { message: 'First name is required' }),
-    Message: z.string().min(1, { message: 'message is required' }),
+    FirstName: z
+      .string()
+      .min(1, { message: 'First name is required' })
+      .refine((value) => value.trim() !== '', {
+        message: 'Enter a valid name',
+      }),
+    Message: z
+      .string()
+      .min(1, { message: 'message is required' })
+      .refine((value) => value.trim() !== '', {
+        message: 'Enter a valid message',
+      }),
     Email: z
       .string()
       .min(1, { message: 'Email is required' })

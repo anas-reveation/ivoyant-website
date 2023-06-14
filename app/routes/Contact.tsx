@@ -22,13 +22,22 @@ import { Helmet } from 'react-helmet'
 
 export const validator = withZod(
   z.object({
-    FirstName: z.string().min(1, { message: 'First name is required' }),
-    // Message: z.string().min(1, { message: 'message is required' }),
+    FirstName: z
+      .string()
+      .min(1, { message: 'First name is required' })
+      .refine((value) => value.trim() !== '', {
+        message: 'Enter a valid name',
+      }),
     Email: z
       .string()
       .min(1, { message: 'Email is required' })
       .email('Must be a valid email'),
-    Message: z.string().min(1, { message: 'Please write a meesage' }),
+    Message: z
+      .string()
+      .min(1, { message: 'Please write a meesage' })
+      .refine((value) => value.trim() !== '', {
+        message: 'Enter a valid message',
+      }),
     Phone: z
       .string()
       .regex(/^\d+$/, { message: 'Phone number must be numeric' })

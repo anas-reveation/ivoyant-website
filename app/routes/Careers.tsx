@@ -50,11 +50,16 @@ const fileFormatValidator = z
     }
   )
 
-  .transform((value) => value.name)
+// .transform((value) => value.name)
 
 export const validator = withZod(
   z.object({
-    FirstName: z.string().min(1, { message: 'First name is required' }),
+    FirstName: z
+      .string()
+      .min(1, { message: 'First name is required' })
+      .refine((value) => value.trim() !== '', {
+        message: 'Enter a valid name',
+      }),
     Email: z
       .string()
       .min(1, { message: 'Email is required' })
@@ -209,6 +214,7 @@ async function submitData(
 
 export default function Careers() {
   const data = useActionData()
+  console.log(data)
 
   const result = useLoaderData<typeof loader>()
 
@@ -292,7 +298,7 @@ export default function Careers() {
                 <div className="col-md-6 col-6">
                   <FormInput
                     name="FirstName"
-                    label="Name"
+                    label="Name*"
                     inputClass="  rounded-0 border-0 post-form text-dark para form-input"
                     divClass="mb-4 "
                     textColor="black-text"
@@ -314,7 +320,7 @@ export default function Careers() {
                 <div className="col-md-6 col-6">
                   <FormInput
                     name="Email"
-                    label="Email"
+                    label="Email*"
                     inputClass="  rounded-0 border-0 post-form text-dark para form-input"
                     divClass="mb-4"
                     textColor="black-text"
