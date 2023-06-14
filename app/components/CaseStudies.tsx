@@ -23,6 +23,7 @@ export default function CaseStudies() {
                     <div className="row min-h-260 h-100">
                       <img
                         className="col-md-5 col-12 pe-md-0 px-1 img-ww"
+                        alt={d?.Title}
                         src={
                           result?.ENV.STRAPI_URL +
                           d?.Image?.data?.attributes?.url

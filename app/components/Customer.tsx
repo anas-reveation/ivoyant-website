@@ -15,28 +15,29 @@ export default function Customer(props: CustomersProps) {
     <div>
       <div className="container my-4">
         <h6 className="fw-600 pt-4 f18 para text-uppercase">
-        {result?.data?.homePages?.data[0]?.attributes
-              ?.Coustmerhead}
+          {result?.data?.homePages?.data[0]?.attributes?.Coustmerhead}
         </h6>
         <div className="row align-items-center  justify-content-center gy-4">
-          {result?.data?.homePages?.data[0]?.attributes
-              ?.CoustmerImage?.map((d: any) => {
-            return (
-              <>
-                <div className="col-md-2 col-6 partner-w">
-                  <div>
-                    <img
-                      src={
-                        result?.ENV.STRAPI_URL +
-                        d?.Images?.data?.attributes?.url
-                      }
-                      className="w-75"
-                    />
+          {result?.data?.homePages?.data[0]?.attributes?.CoustmerImage?.map(
+            (d: any) => {
+              return (
+                <>
+                  <div className="col-md-2 col-6 partner-w">
+                    <div>
+                      <img
+                        src={
+                          result?.ENV.STRAPI_URL +
+                          d?.Images?.data?.attributes?.url
+                        }
+                        alt="Delighting Customers"
+                        className="w-75"
+                      />
+                    </div>
                   </div>
-                </div>
-              </>
-            )
-          })}
+                </>
+              )
+            }
+          )}
         </div>
       </div>
     </div>

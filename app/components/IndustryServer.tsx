@@ -14,7 +14,11 @@ export default function IndustryServe(props: IndustrysProps) {
     <>
       <div className="col-xl-6 col-lg-12 col-md-12  col-12">
         <div className="row min-h-230">
-          <img className="col-md-4 col-12 pe-md-0 px-1" src={imageurl} />
+          <img
+            className="col-md-4 col-12 pe-md-0 px-1"
+            alt={title}
+            src={imageurl}
+          />
           <div className="col-md-8 col-12 bg-white d-flex flex-column justify-content-evenly py-3 py-md-0">
             <h5 className=" fw-600">{title}</h5>
             <p className=" f-13 dark-grey-text lh-base">{decription}</p>

@@ -5,24 +5,23 @@ import { json } from '@remix-run/node'
 import { graphcmsClient } from '~/lib/graphcms'
 import { loader } from '~/root'
 
-
 export default function Footer() {
   const result = useLoaderData<typeof loader>()
-
 
   return (
     <div className="bg-secondary  py-5">
       <div className="container">
         <p className="para text-white">We Are Here to Answer Your Questions</p>
         <Link to="/contact">
-        <Button
-          text="Lets Talk"
-          borderColor="white"
-          color="text-white"
-          className="mb-4 mt-2 py-1"
-          width="120px"
-        /></Link>
-        
+          <Button
+            text="Lets Talk"
+            borderColor="white"
+            color="text-white"
+            className="mb-4 mt-2 py-1"
+            width="120px"
+          />
+        </Link>
+
         <div className="row gy-4 justify-content-between">
           <div className="col-md-6 col-12">
             <div className="d-flex align-items-center">
@@ -33,7 +32,7 @@ export default function Footer() {
                     ?.url
                 }
                 alt=""
-                className="logo-header"
+                className="logo-footer"
               />
               <div className="ms-3 text-white footer-family">
                 {result?.data?.footer?.data?.attributes?.Name}
@@ -43,21 +42,24 @@ export default function Footer() {
               {result?.data?.footer?.data?.attributes?.Description}
             </p>
             <div className="row">
-              {result?.data?.footer?.data?.attributes?.SocialMediaLinks?.map((d: any) => {
-                return (
-                  <>
-                    <div className="col-md-1 col-2">
-                      <a href={d?.SocialLink} target="_blank">
-                        <img
-                        src={
-                          result.ENV.STRAPI_URL + d?.SocialIcon?.data?.attributes?.url
-                        }
-                        />
-                      </a>
-                    </div>
-                  </>
-                )
-              })}
+              {result?.data?.footer?.data?.attributes?.SocialMediaLinks?.map(
+                (d: any) => {
+                  return (
+                    <>
+                      <div className="col-md-1 col-2">
+                        <a href={d?.SocialLink} target="_blank">
+                          <img
+                            src={
+                              result.ENV.STRAPI_URL +
+                              d?.SocialIcon?.data?.attributes?.url
+                            }
+                          />
+                        </a>
+                      </div>
+                    </>
+                  )
+                }
+              )}
             </div>
           </div>
           <div className="col-md-5 col-12">

@@ -18,15 +18,23 @@ export default function Culture(props: CultureProps) {
         <div className="col-md-7 col-12">
           <div className="cult-m">
             <span className="d-flex align-items-center ">
-              <img className='icon-img'
+              <img
+                className="icon-img"
                 src={
                   result?.ENV.STRAPI_URL +
-                  result?.data?.homePages?.data[0]?.attributes?.HomeLast[0]?.Icon
-                    ?.data?.attributes?.url
+                  result?.data?.homePages?.data[0]?.attributes?.HomeLast[0]
+                    ?.Icon?.data?.attributes?.url
+                }
+                alt={
+                  result?.data?.homePages?.data[0]?.attributes?.HomeLast[0]
+                    ?.Title
                 }
               />
               <h6 className="fw-600 pt-4 ms-3  mb-4 text-uppercase f18">
-                {result?.data?.homePages?.data[0]?.attributes?.HomeLast[0]?.Title}{' '}
+                {
+                  result?.data?.homePages?.data[0]?.attributes?.HomeLast[0]
+                    ?.Title
+                }{' '}
               </h6>
             </span>
             <p>
@@ -44,6 +52,9 @@ export default function Culture(props: CultureProps) {
                 result?.ENV.STRAPI_URL +
                 result?.data?.homePages?.data[0]?.attributes?.HomeLast[0]?.Image
                   ?.data?.attributes?.url
+              }
+              alt={
+                result?.data?.homePages?.data[0]?.attributes?.HomeLast[0]?.Title
               }
               className="overflow-hidden culture-img"
             />

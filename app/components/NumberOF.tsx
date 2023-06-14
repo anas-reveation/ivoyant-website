@@ -14,7 +14,7 @@ export default function NumberOF(props: NumbersProps) {
           <div className="col-2 col-sm-3   col-md-3  ">
             <img
               className="number-size bg-light-green p-3"
-              alt=""
+              alt={subheading}
               src={imageurl}
             />
           </div>
