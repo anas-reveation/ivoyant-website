@@ -53,6 +53,7 @@ export default function Footer() {
                               result.ENV.STRAPI_URL +
                               d?.SocialIcon?.data?.attributes?.url
                             }
+                            alt="social links"
                           />
                         </a>
                       </div>
@@ -79,7 +80,7 @@ export default function Footer() {
                               {' '}
                               <img
                                 className="arrowright-icon"
-                                alt=""
+                                alt="arrow"
                                 src="../images/Home/arrowright.svg"
                               />
                             </span>{' '}
@@ -106,7 +107,7 @@ export default function Footer() {
                               {' '}
                               <img
                                 className="arrowright-icon"
-                                alt=""
+                                alt="arrow"
                                 src="../images/Home/arrowright.svg"
                               />
                             </span>{' '}
