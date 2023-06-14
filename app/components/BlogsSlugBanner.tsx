@@ -32,7 +32,7 @@ export default function BlogsSlugBanner(props: BlogSlugBannerProps) {
 
           <div className="row align-items-center">
             <div className="col-lg-3 col-md-4 d-flex align-items-center py-md-5 py-3">
-              <img src={`../images/blogs/Vector@2x.svg`} />
+              <img alt="User" src={`../images/blogs/Vector@2x.svg`} />
               <p className="fs-14 mb-0 ps-3">By {Name}</p>
             </div>
 

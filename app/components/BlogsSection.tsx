@@ -32,7 +32,7 @@ export default function BlogsSection() {
                   >
                     <div className="row align-items-center">
                       <div className="col-1">
-                        <img src="./images/blogs/Vector1.svg" />
+                        <img src="./images/blogs/Vector1.svg" alt="User" />
                       </div>
                       <div className="col-10 ">
                         <p className="fs-14 para mb-0 ">{d.attributes?.Name}</p>
@@ -55,7 +55,7 @@ export default function BlogsSection() {
                             </p>
                           </div>
                           <div className="col-8 text-end">
-                            <img src="./images/blogs/Vector.svg" />
+                            <img src="./images/blogs/Vector.svg" alt="arrow" />
                           </div>
                         </div>
                       </Link>

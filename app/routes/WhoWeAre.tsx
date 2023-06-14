@@ -55,6 +55,7 @@ export default function WhoeWeAre() {
                             result?.ENV.STRAPI_URL +
                             d?.Image?.data?.attributes?.url
                           }
+                          alt={d?.Title}
                         />
                         <h6 className="bann-text mt-3 text-uppercase">
                           {d?.Title}

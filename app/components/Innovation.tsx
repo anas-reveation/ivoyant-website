@@ -18,7 +18,11 @@ export default function Innovations() {
           }
         </h5>
       </div>
-      <img src="./images/whywe/rectangle-827@2x.png" className="w-100 h-100" />
+      <img
+        src="./images/whywe/rectangle-827@2x.png"
+        alt="Innovation"
+        className="w-100 h-100"
+      />
       <div className="container">
         <div className="row">
           <div className="col-md-4 col-12 innovate-img d-flex align-items-center justify-content-center">

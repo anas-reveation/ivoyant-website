@@ -32,7 +32,11 @@ export default function BlogsBanner() {
 
               <div className="row align-items-center">
                 <div className="col-3 col-md-2">
-                  <img src="./images/blogs/Ellipse 5.svg" className="w-75" />
+                  <img
+                    src="./images/blogs/Ellipse 5.svg"
+                    alt="author"
+                    className="w-75"
+                  />
                 </div>
                 <div className="col-5 col-md-4 ps-0">
                   <p className="para mb-2 fw-600">Amada Smith</p>

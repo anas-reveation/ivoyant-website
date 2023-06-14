@@ -80,6 +80,7 @@ export default function Testimonial() {
                                     result.ENV.STRAPI_URL +
                                     d?.Icon?.data?.attributes?.url
                                   }
+                                  alt="Testimonial Icon"
                                   className="test-icon"
                                 />
                               </div>
