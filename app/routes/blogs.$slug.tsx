@@ -132,21 +132,20 @@ async function submitData(formData: any, accessToken: any, instanceUrl: any) {
 export default function BlogsSlug() {
   const maindata = useLoaderData<typeof loader>()
   console.log(maindata)
-  // const data = useActionData()
+  const data = useActionData()
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
-  // const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+  useEffect(() => {
+    if (data?.success == true) {
+      setShowSuccessMessage(true)
 
-  // useEffect(() => {
-  //   if (data?.success == true) {
-  //     setShowSuccessMessage(true)
-
-  //     const timer = setTimeout(() => {
-  //       setShowSuccessMessage(false)
-  //     }, 2000)
-  //     return () => clearTimeout(timer)
-  //   }
-  //   // Clear the timer when the component unmounts
-  // }, [data?.success])
+      const timer = setTimeout(() => {
+        setShowSuccessMessage(false)
+      }, 2000)
+      return () => clearTimeout(timer)
+    }
+    // Clear the timer when the component unmounts
+  }, [data?.success])
   return (
     <>
       <Helmet>
@@ -282,13 +281,13 @@ export default function BlogsSlug() {
                       width="134px"
                       height="40px"
                     />
-                    {/* {showSuccessMessage && (
+                    {showSuccessMessage && (
                       <div className="col-12 grey-bg py-2 my-3">
                         <h5 className="text-black mb-0 mx-2">
                           Form Submitted Successfully
                         </h5>
                       </div>
-                    )} */}
+                    )}
                   </ValidatedForm>
                 </div>
               </div>
