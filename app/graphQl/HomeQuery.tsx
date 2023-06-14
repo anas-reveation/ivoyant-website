@@ -1027,6 +1027,24 @@ export const GetBlogsSlugs = gql`
               }
             }
           }
+          ImgCarosel {
+            Rightimg {
+              data {
+                attributes {
+                  name
+                  url
+                }
+              }
+            }
+            leftImg {
+              data {
+                attributes {
+                  name
+                  url
+                }
+              }
+            }
+          }
           BgImage {
             data {
               attributes {

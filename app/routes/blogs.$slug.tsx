@@ -40,7 +40,7 @@ export async function loader({ params }: any) {
   const maindata = Slugdata?.blogsSlugs?.data.find(
     (card: any) => card.attributes.Slug === slugid
   )
-  const content = Slugdata?.blogsSlugs?.data[1]?.attributes?.RichContent
+  const content = Slugdata?.blogsSlugs?.data[0]?.attributes?.RichContent
   const innerhtml = marked(content!)
 
   return json({
@@ -163,12 +163,12 @@ export default function BlogsSlug() {
         )}
       </Helmet>
       <BlogsSlugBanner
-        Heading={maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.Heading}
-        Name={maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.Name}
-        Date={maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.CreateDate}
+        Heading={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Heading}
+        Name={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Name}
+        Date={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.CreateDate}
         imageurl={
           maindata.ENV.STRAPI_URL +
-          maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.BgImageSlug?.data
+          maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BgImageSlug?.data
             ?.attributes?.url
         }
       />
@@ -182,6 +182,68 @@ export default function BlogsSlug() {
                   className="richtext"
                   dangerouslySetInnerHTML={{ __html: maindata?.innerhtml }}
                 />
+                <div
+                  id="carouselExampleIndicators"
+                  className="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  `
+                  <div className="carousel-inner">
+                    {maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.ImgCarosel.map(
+                      (d: any, $index: any) => {
+                        return (
+                          <>
+                            <div
+                              className={
+                                $index === 0
+                                  ? 'carousel-item active p-3'
+                                  : 'carousel-item p-3'
+                              }
+                              key={$index}
+                            >
+                              <div className="row">
+                                <img
+                                  src={
+                                    maindata.ENV.STRAPI_URL +
+                                    d?.Rightimg?.data?.attributes?.url
+                                  }
+                                  className="col-6 d-block "
+                                  alt="..."
+                                />
+                                <img
+                                  src={
+                                    maindata.ENV.STRAPI_URL +
+                                    d?.leftImg?.data?.attributes?.url
+                                  }
+                                  className="col-6 d-block "
+                                  alt="..."
+                                />
+                              </div>
+                            </div>
+                          </>
+                        )
+                      }
+                    )}
+                  </div>
+                  <div className="carousel-indicators py-3 position-unset">
+                    {maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.ImgCarosel.map(
+                      (d: any, $index: any) => {
+                        return (
+                          <>
+                            <button
+                              type="button"
+                              data-bs-target="#carouselExampleIndicators"
+                              data-bs-slide-to={$index}
+                              className={$index === 0 ? 'active' : ''}
+                              aria-label={`Slide ${$index + 1}`}
+                            ></button>
+                          </>
+                        )
+                      }
+                    )}
+                  </div>
+                  `
+                </div>
                 <div className="mt-4 ">
                   <h2 className="py-3">Leave a Message</h2>
                   <ValidatedForm
@@ -198,7 +260,7 @@ export default function BlogsSlug() {
                     />
                     <FormInput
                       name="Email"
-                      label="Email Address*"
+                      label="Email*"
                       inputClass="form-message rounded-0 form-input"
                       divClass="mb-4"
                       textColor="black-text"
@@ -216,7 +278,7 @@ export default function BlogsSlug() {
                     <FormButton
                       text="Submit"
                       color="black"
-                      className="mb-3 py-1 fw-semibold para mt-2"
+                      className="mb-3 mt-3 py-1 fw-semibold para mt-2"
                       width="134px"
                       height="40px"
                     />
@@ -233,15 +295,15 @@ export default function BlogsSlug() {
             </div>
             <div className="col-12 col-lg-5 mt-4 mt-lg-0 mb-5">
               <SlugBioCard
-                Name={maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.Name}
-                Bio={maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.Bio}
+                Name={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Name}
+                Bio={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Bio}
                 SocialLinks={
-                  maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes
+                  maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes
                     ?.SocialLinks
                 }
                 Image={
                   maindata.ENV.STRAPI_URL +
-                  maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.BioImage
+                  maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BioImage
                     ?.data?.attributes?.url
                 }
                 ImgEnv={maindata.ENV.STRAPI_URL}
@@ -253,7 +315,7 @@ export default function BlogsSlug() {
               <div className="mt-3 box-shadow p-5 bg-white">
                 <h3>Categories</h3>
                 <hr className="py-4" />
-                {maindata?.Slugdata?.blogsSlugs?.data[1]?.attributes?.Categorie.map(
+                {maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Categorie.map(
                   (d: any) => {
                     return (
                       <div className="row justify-content-between mb-2">
