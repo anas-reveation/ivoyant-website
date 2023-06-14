@@ -558,6 +558,15 @@ nav-pills .show>.nav-link,
     height: 11px !important;
     border-radius: 55%;
 }
+.h-1{
+    height: 1.9rem;
+}
+.h-2{
+    height: 2.4rem;
+}
+.h-3{
+    height: 3.5rem;
+}
 
 /* .serve-img {
     height: 14.7rem;

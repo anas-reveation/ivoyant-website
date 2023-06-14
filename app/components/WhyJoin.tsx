@@ -12,7 +12,7 @@ export default function WhyJoin() {
               <>
                 <div className="col-xl-4 col-md-6 col-12">
                   <div className="bg-secondary p-4 min-15 h-100">
-                    <div className="d-flex align-items-start mb-3">
+                    <div className="d-flex align-items-start mb-3 h-2">
                       <img
                         className="me-3 join-img"
                         alt=""

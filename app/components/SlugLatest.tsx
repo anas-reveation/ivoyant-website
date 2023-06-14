@@ -5,6 +5,13 @@ export interface SlugLatestCardProps {
 
 export default function SlugLatestCard(props: SlugLatestCardProps) {
   const { BlogsData, ImageEnv } = props
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString)
+    const day = date.getDate()
+    const month = date.toLocaleString('en-US', { month: 'long' })
+    const year = date.getFullYear()
+    return `${day} ${month} ${year}`
+  }
   console.log(BlogsData)
 
   return (
@@ -27,8 +34,8 @@ export default function SlugLatestCard(props: SlugLatestCardProps) {
                   <p className="para">{d?.attributes?.CardTitle}</p>
                   <div className=" d-flex align-items-center">
                     <img src="../images/blogs/Vector4.svg" className="" />
-                    <p className="para col-6 mb-0 ps-3">
-                      {d?.attributes?.CreateDate}
+                    <p className="para col-7 mb-0 ps-3">
+                      {formatDate(d?.attributes?.CreateDate)}
                     </p>
                   </div>
                 </div>

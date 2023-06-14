@@ -26,7 +26,10 @@ export default function BlogsSection() {
                   }}
                 >
                   {/* <img src="./images/blogs/Rectangle 718.svg" className="w-100 " /> */}
-                  <div className="white-text p-4 bg-secondary w-100">
+                  <div
+                    className="white-text p-4 bg-secondary w-100 d-flex flex-column justify-content-between"
+                    style={{ height: '225px' }}
+                  >
                     <div className="row align-items-center">
                       <div className="col-1">
                         <img src="./images/blogs/Vector1.svg" />
@@ -35,23 +38,28 @@ export default function BlogsSection() {
                         <p className="fs-14 para mb-0 ">{d.attributes?.Name}</p>
                       </div>
                     </div>
-                    <h5 className="py-4">{d.attributes?.CardTitle}</h5>
-                    <hr className="my-0 opacity-n white-text" />
-                    <Link
-                      to={d.attributes?.Slug}
-                      style={{ textDecoration: 'none' }}
-                    >
-                      <div className="row align-items-center ">
-                        <div className="col-4">
-                          <p className="fs-14 para mb-0 pt-4 white-text">
-                            Learn More
-                          </p>
+                    <div>
+                      {' '}
+                      <h5 className="py-4 ">{d.attributes?.CardTitle}</h5>
+                    </div>
+                    <div>
+                      <hr className="my-0 opacity-n white-text" />
+                      <Link
+                        to={d.attributes?.Slug}
+                        style={{ textDecoration: 'none' }}
+                      >
+                        <div className="row align-items-center mt-4">
+                          <div className="col-4">
+                            <p className="fs-14 para mb-0  white-text">
+                              Learn More
+                            </p>
+                          </div>
+                          <div className="col-8 text-end">
+                            <img src="./images/blogs/Vector.svg" />
+                          </div>
                         </div>
-                        <div className="col-8 text-end">
-                          <img src="./images/blogs/Vector.svg" />
-                        </div>
-                      </div>
-                    </Link>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
