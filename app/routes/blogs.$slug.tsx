@@ -142,20 +142,20 @@ async function submitData(formData: any, accessToken: any, instanceUrl: any) {
 export default function BlogsSlug() {
   const maindata = useLoaderData<typeof loader>()
   console.log(maindata)
-  const data = useActionData()
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+  const data = useActionData()
 
   useEffect(() => {
-    if (data?.success == true) {
+    if (data?.success === true) {
       setShowSuccessMessage(true)
 
       const timer = setTimeout(() => {
         setShowSuccessMessage(false)
       }, 2000)
+
       return () => clearTimeout(timer)
     }
-    // Clear the timer when the component unmounts
-  }, [data?.success])
+  }, [data])
   return (
     <>
       <Helmet>

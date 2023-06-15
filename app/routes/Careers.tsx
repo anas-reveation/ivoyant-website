@@ -213,25 +213,25 @@ async function submitData(
 }
 
 export default function Careers() {
-  const data = useActionData()
-  console.log(data)
-
   const result = useLoaderData<typeof loader>()
 
   // // Inside your component
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+  const data = useActionData()
 
   useEffect(() => {
-    if (data?.success == true) {
+    if (data?.success === true) {
       setShowSuccessMessage(true)
 
       const timer = setTimeout(() => {
         setShowSuccessMessage(false)
       }, 2000)
+
       return () => clearTimeout(timer)
     }
-    // Clear the timer when the component unmounts
-  }, [data?.success])
+  }, [data])
+
+  // Rest of the component code...
 
   return (
     <div>
