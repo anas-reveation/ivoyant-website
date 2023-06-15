@@ -35,6 +35,15 @@
     height: 100%;
     width: 100%;
 }
+
+.link-img{
+    width: 30.47px;
+    height: 24px;
+}
+.cat-arrow{
+    width: 12px;
+    height: 8.4px;
+}
 .logo-footer{
     width: 32.6px;
     height: 32px;
