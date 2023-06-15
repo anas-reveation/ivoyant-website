@@ -57,9 +57,9 @@ export default function WhoeWeAre() {
                           }
                           alt={d?.Title}
                         />
-                        <h6 className="bann-text mt-3 text-uppercase">
+                        <p className="bann-text mt-3 fw-500 text-uppercase">
                           {d?.Title}
-                        </h6>
+                        </p>
                       </div>
                     </div>
                   </>

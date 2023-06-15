@@ -8,9 +8,9 @@ export default function Innovations() {
   return (
     <>
       <div className="text-center mt-4">
-        <h2 className=" fw-semibold">
+        <h4 className=" fw-semibold">
           {result?.data?.whoWeAres?.data[0]?.attributes?.FouthSection?.Title}
-        </h2>
+        </h4>
         <h5 className="mt-4">
           {
             result?.data?.whoWeAres?.data[0]?.attributes?.FouthSection
