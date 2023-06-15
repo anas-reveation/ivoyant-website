@@ -85,6 +85,7 @@ export default function TransformationBanner() {
                         result.ENV.STRAPI_URL +
                         d?.secondSectionImage?.data?.attributes?.url
                       }
+                      alt={d?.secondSectionImage?.data?.attributes?.name}
                       className="w-100"
                     />
                   </div>
