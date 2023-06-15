@@ -31,6 +31,7 @@ export default function Footer() {
                   result?.data?.footer?.data?.attributes?.Logo?.data?.attributes
                     ?.url
                 }
+                loading="lazy"
                 alt="logo-footer"
                 className="logo-footer"
               />

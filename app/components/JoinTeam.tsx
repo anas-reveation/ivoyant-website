@@ -53,7 +53,7 @@ export default function JoinTeam() {
                 className="btn btn-secondary dropdown-toggle w-12 rounded-0 join-btn para py-2 rounded-1"
                 href="#"
                 role="button"
-                id="dropdownMenuLink1"
+                id="dropdownMenuLink2"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
