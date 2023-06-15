@@ -61,7 +61,7 @@ export default function Header() {
                       : ''
                   }`}
                   href="#"
-                  id="navbarDropdownMenuLink"
+                  id="navbarDropdownMenuLink2"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
@@ -70,7 +70,7 @@ export default function Header() {
                 </a>
                 <ul
                   className="dropdown-menu bg-black text-white"
-                  aria-labelledby="navbarDropdownMenuLink"
+                  aria-labelledby="navbarDropdownMenuLink2"
                 >
                   <li className="text-white">
                     <Link className={`dropdown-item `} to="#">
@@ -188,7 +188,7 @@ export default function Header() {
                       : ''
                   } `}
                   href="#"
-                  id="navbarDropdownMenuLink"
+                  id="navbarDropdownMenuLink1"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
@@ -197,7 +197,7 @@ export default function Header() {
                 </a>
                 <ul
                   className="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
+                  aria-labelledby="navbarDropdownMenuLink1"
                 >
                   <li className="text-white">
                     <Link className="dropdown-item" to="#">
