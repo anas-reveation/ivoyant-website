@@ -62,8 +62,9 @@ export default function Home() {
           <div
             className=" background my-4"
             style={{
-              backgroundImage: `linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 0.32%),url(./images/Home/rectangle-683@2x.png)`,
-              backgroundSize: '100% 100%',
+              backgroundImage: `linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 0.32%),url(./images/Home/bg-inno.svg)`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
             }}
           >
             <div className="container py-5">
