@@ -180,10 +180,13 @@ async function submitData(
     )
 
     try {
-      let buffer = Buffer.from(await fileUploadfile.text())
+      // let buffer = Buffer.from(await fileUploadfile.text())
       // console.log(
       //   'data:' + fileUploadfile.type + ';base64,' + buffer.toString('base64')
       // )
+      const fileContent = await fileUploadfile.arrayBuffer()
+      const buffer = Buffer.from(fileContent)
+      const base64Data = buffer.toString('base64')
 
       await axios
         .post(
@@ -193,7 +196,7 @@ async function submitData(
             PathOnClient: 'simple',
             ContentLocation: 'S',
             FirstPublishLocationId: `${res.data.id}`,
-            VersionData: `${buffer.toString('base64')}`,
+            VersionData: `${base64Data}`,
           },
 
           config
