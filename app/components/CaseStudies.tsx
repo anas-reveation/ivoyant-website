@@ -21,14 +21,17 @@ export default function CaseStudies() {
                 <>
                   <div className="col-xl-6 col-lg-6 col-md-12  col-12">
                     <div className="row min-h-260 h-100">
-                      <img
-                        className="col-md-5 col-12 pe-md-0 px-1 img-ww"
-                        alt={d?.Title}
-                        src={
-                          result?.ENV.STRAPI_URL +
-                          d?.Image?.data?.attributes?.url
-                        }
-                      />
+                      <div className="col-md-5 col-12 pe-md-0 px-1">
+                        <img
+                          className=" img-ww img-h-w"
+                          alt={d?.Title}
+                          src={
+                            result?.ENV.STRAPI_URL +
+                            d?.Image?.data?.attributes?.url
+                          }
+                        />
+                      </div>
+
                       <div className="col-md-7 col-12 bg-white d-flex flex-column  justify-content-between">
                         <div>
                           <h5 className="pt-3 fw-600">{d?.Title}</h5>
