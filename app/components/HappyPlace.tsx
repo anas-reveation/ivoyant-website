@@ -33,8 +33,8 @@ export default function HappyPlace() {
                           result.ENV.STRAPI_URL +
                           d?.CaroselImages?.data?.attributes?.url
                         }
-                        className="d-block w-100"
-                        alt="..."
+                        className="d-block img-h-w"
+                        alt={d?.CaroselImages?.data?.attributes?.name}
                       />
                     </div>
                   </>

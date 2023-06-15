@@ -53,7 +53,11 @@ export default function CareersAt() {
                   result?.data?.lIfeAtIvoyants?.data[0]?.attributes?.LastSection
                     ?.Image?.data?.attributes?.url
                 }
-                className="w-100"
+                alt={
+                  result?.data?.lIfeAtIvoyants?.data[0]?.attributes
+                    ?.FourthSection?.Image?.data?.attributes?.name
+                }
+                className="img-h-w"
               />
             </div>
           </div>
