@@ -14,7 +14,12 @@ export default function PracticeDetailSecond(props: DetailSecondProps) {
       <div className="row">
         <div className="col-12">
           <div>
-            <img className="w-100 h-100" alt={Title} src={image} />
+            <img
+              className="w-100 h-100"
+              alt={Title}
+              src={image}
+              loading="lazy"
+            />
           </div>
         </div>
       </div>

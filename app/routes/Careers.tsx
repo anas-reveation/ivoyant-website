@@ -359,7 +359,7 @@ export default function Careers() {
                 <div className="col-md-6 col-6">
                   <SelectFormInput
                     values={[
-                      { value: 'Banglore', label: 'BAnglore' },
+                      { value: 'Banglore', label: 'Banglore' },
                       { value: 'Pune', label: 'Pune' },
                       { value: 'Mumbai', label: 'Mumbai' },
                     ]}
