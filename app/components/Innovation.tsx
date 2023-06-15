@@ -19,7 +19,7 @@ export default function Innovations() {
         </h5>
       </div>
       <img
-        src="./images/whywe/rectangle-827@2x.png"
+        src="./images/whywe/innovate.svg"
         alt="Innovation"
         className="w-100 h-100"
       />
