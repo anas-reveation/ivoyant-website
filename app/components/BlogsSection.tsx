@@ -25,7 +25,6 @@ export default function BlogsSection() {
                     backgroundSize: 'contain',
                   }}
                 >
-                  {/* <img src="./images/blogs/Rectangle 718.svg" className="w-100 " /> */}
                   <div
                     className="white-text p-4 bg-secondary w-100 d-flex flex-column justify-content-between"
                     style={{ height: '225px' }}
