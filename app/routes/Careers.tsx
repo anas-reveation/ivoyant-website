@@ -279,7 +279,11 @@ export default function Careers() {
         <div className="row gy-4">
           <div className="col-xl-5 col-lg-5 col-md-12 col-12">
             <div className="d-flex flex-column align-items-center">
-              <img src="./images/Home/post.svg" className="img-ht" />
+              <img
+                src="./images/Home/post.svg"
+                className="img-ht"
+                alt="Dream Job"
+              />
               <div className="mt-4">
                 <h4 className="fw-semibold">Cant Find A Role For you?</h4>
                 <p>
@@ -374,7 +378,11 @@ export default function Careers() {
                 </div>
                 <div className="col-md-6 col-6 mt-0 text-center text-md-start">
                   <div className="d-flex align-items-center flex-row  w-fit p-2">
-                    <img src="./images/Home/link-1.svg" className="me-1" />
+                    <img
+                      src="./images/Home/link-1.svg"
+                      className="me-1 link-img"
+                      alt="Linkedin"
+                    />
                     <p className="mb-0 para fw-semibold">Apply With Linkedin</p>
                   </div>
                 </div>

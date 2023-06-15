@@ -60,7 +60,7 @@ export default function CareersBanner(props: CareerBannerProps) {
             </div>
             <div className="col-md-4 col-12">
               <div>
-                <img src={Image} className="w-100" />
+                <img src={Image} alt={Title2} className="img-h-w" />
               </div>
             </div>
           </div>

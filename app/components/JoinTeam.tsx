@@ -16,19 +16,19 @@ export default function JoinTeam() {
                 className="btn btn-secondary dropdown-toggle w-12 rounded-0 join-btn para py-2 rounded-1"
                 href="#"
                 role="button"
-                id="dropdownMenuLink"
+                id="dropdownMenuLink1"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 All Categories{' '}
                 <img
-                  className="ms-5"
+                  className="ms-5 cat-arrow"
                   alt="arrow"
                   src="../WhyWe2/Vector_5.svg"
                 />
               </a>
 
-              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                 <li>
                   <a className="dropdown-item" href="#">
                     Action
@@ -53,19 +53,19 @@ export default function JoinTeam() {
                 className="btn btn-secondary dropdown-toggle w-12 rounded-0 join-btn para py-2 rounded-1"
                 href="#"
                 role="button"
-                id="dropdownMenuLink"
+                id="dropdownMenuLink1"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 All Locations{' '}
                 <img
-                  className="ms-5"
+                  className="ms-5 cat-arrow"
                   alt="arrow"
                   src="../WhyWe2/Vector_5.svg"
                 />
               </a>
 
-              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink2">
                 <li>
                   <a className="dropdown-item" href="#">
                     Action

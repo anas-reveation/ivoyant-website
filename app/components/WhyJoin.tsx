@@ -15,7 +15,7 @@ export default function WhyJoin() {
                     <div className="d-flex align-items-start mb-3 h-2">
                       <img
                         className="me-3 join-img"
-                        alt=""
+                        alt={d?.Title}
                         src={
                           result.ENV.STRAPI_URL + d?.Icon?.data?.attributes?.url
                         }
