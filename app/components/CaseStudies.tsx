@@ -8,9 +8,9 @@ export default function CaseStudies() {
   return (
     <div className="bg-secondary py-4 mt-5">
       <div className="container">
-        <p className="fw-600 white-text text-center pt-2 mb-1 text-uppercase">
+        <h4 className="fw-600 font-16 white-text text-center pt-2 mb-1 text-uppercase">
           {result?.data?.homePages?.data[0]?.attributes?.CaseShortHead}
-        </p>
+        </h4>
         <h4 className="fw-600 white-text text-center py-4">
           {result?.data?.homePages?.data[0]?.attributes?.CaseLongHead}
         </h4>
