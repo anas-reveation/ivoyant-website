@@ -220,6 +220,7 @@ export default function Home() {
                                   result.ENV.STRAPI_URL +
                                   d?.SocialIcon?.data?.attributes?.url
                                 }
+                                alt={d?.SocialIcon?.data?.attributes?.name}
                               />
                             </a>
                           </div>
