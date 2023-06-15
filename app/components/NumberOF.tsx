@@ -9,7 +9,7 @@ export default function NumberOF(props: NumbersProps) {
 
   return (
     <>
-      <div className="col-10 col-sm-5 col-lg-3">
+      <div className="col-10 col-sm-5 col-xl-3 col-lg-4">
         <div className="row align-items-center justify-content-between">
           <div className="col-2 col-sm-3   col-md-3  ">
             <img
