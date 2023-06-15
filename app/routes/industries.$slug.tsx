@@ -49,14 +49,17 @@ export default function Industries() {
                 {maindata?.data?.attributes?.FirstSection?.Subheading}
               </p>
             </div>
-            <img
-              className="col-12 col-md-4"
-              src={
-                maindata.ENV.STRAPI_URL +
-                maindata?.data?.attributes?.FirstSection?.Image?.data
-                  ?.attributes?.url
-              }
-            />
+            <div className="col-12 col-md-4">
+              <img
+                className="img-h-w"
+                src={
+                  maindata.ENV.STRAPI_URL +
+                  maindata?.data?.attributes?.FirstSection?.Image?.data
+                    ?.attributes?.url
+                }
+                alt={maindata?.data?.attributes?.FirstSection?.Heading}
+              />
+            </div>
           </div>
         </div>
       </div>
