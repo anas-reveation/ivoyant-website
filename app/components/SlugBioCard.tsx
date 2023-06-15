@@ -9,12 +9,18 @@ export interface SlugBioCardProps {
 }
 
 export default function SlugBioCard(props: SlugBioCardProps) {
-  const { Image, Name, Bio, SocialLinks,ImgEnv } = props
+  const { Image, Name, Bio, SocialLinks, ImgEnv } = props
 
   return (
     <>
       <div className="p-5 box-shadow bg-white">
-        <img src={Image} className="col-3" style={{ borderRadius: '50%' }} />
+        <img
+          src={Image}
+          className=" img-bio"
+          alt={Name}
+          loading="lazy"
+          style={{ borderRadius: '50%' }}
+        />
         <h5 className="py-3">{Name}</h5>
         <p className="para">{Bio}</p>
         <div className="row">
@@ -24,10 +30,9 @@ export default function SlugBioCard(props: SlugBioCardProps) {
                 <div className="col-md-1 col-2 me-2">
                   <Link to={d?.SocialLink} target="_blank">
                     <img
-                      src={
-                        ImgEnv +
-                        d?.SocialIcon?.data?.attributes?.url
-                      }
+                      className="social-slug"
+                      src={ImgEnv + d?.SocialIcon?.data?.attributes?.url}
+                      alt="social links"
                     />
                   </Link>
                 </div>

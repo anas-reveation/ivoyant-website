@@ -32,12 +32,20 @@ export default function BlogsSlugBanner(props: BlogSlugBannerProps) {
 
           <div className="row align-items-center">
             <div className="col-lg-3 col-md-4 d-flex align-items-center py-md-5 py-3">
-              <img alt="User" src={`../images/blogs/Vector@2x.svg`} />
+              <img
+                className="blog-d"
+                alt="User"
+                src={`../images/blogs/Vector@2x.svg`}
+              />
               <p className="fs-14 mb-0 ps-3">By {Name}</p>
             </div>
 
             <div className="col-lg-3 col-md-4 d-flex align-items-center pb-3 pb-md-0">
-              <img src="../images/blogs/Vector3.svg" />
+              <img
+                className="blog-d"
+                alt="date"
+                src="../images/blogs/Vector3.svg"
+              />
               <p className="fs-14 mb-0 ps-3">{formattedDate}</p>
             </div>
           </div>

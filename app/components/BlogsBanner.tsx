@@ -39,6 +39,7 @@ export default function BlogsBanner() {
                     src="./images/blogs/Ellipse 5.svg"
                     alt="author"
                     className="w-h-75"
+                    loading="lazy"
                   />
                 </div>
                 <div className="col-5 col-md-4 ps-0">
