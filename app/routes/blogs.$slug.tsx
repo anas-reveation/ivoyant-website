@@ -50,7 +50,7 @@ export async function loader({ params }: any) {
   const maindata = Slugdata?.blogsSlugs?.data.find(
     (card: any) => card.attributes.Slug === slugid
   )
-  const content = Slugdata?.blogsSlugs?.data[0]?.attributes?.RichContent
+  const content = maindata?.attributes?.RichContent
   const innerhtml = marked(content!)
 
   return json({
@@ -172,13 +172,12 @@ export default function BlogsSlug() {
         )}
       </Helmet>
       <BlogsSlugBanner
-        Heading={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Heading}
-        Name={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Name}
-        Date={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.CreateDate}
+        Heading={maindata?.data?.attributes?.Heading}
+        Name={maindata?.data?.attributes?.Name}
+        Date={maindata?.data?.attributes?.CreateDate}
         imageurl={
           maindata.ENV.STRAPI_URL +
-          maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BgImageSlug?.data
-            ?.attributes?.url
+          maindata?.data?.attributes?.BgImageSlug?.data?.attributes?.url
         }
       />
       <div className="bg-light-blue">
@@ -198,7 +197,7 @@ export default function BlogsSlug() {
                 >
                   `
                   <div className="carousel-inner">
-                    {maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.ImgCarosel.map(
+                    {maindata?.data?.attributes?.ImgCarosel.map(
                       (d: any, $index: any) => {
                         return (
                           <>
@@ -235,7 +234,7 @@ export default function BlogsSlug() {
                     )}
                   </div>
                   <div className="carousel-indicators py-3 position-unset">
-                    {maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.ImgCarosel.map(
+                    {maindata?.data?.attributes?.ImgCarosel.map(
                       (d: any, $index: any) => {
                         return (
                           <>
@@ -304,16 +303,12 @@ export default function BlogsSlug() {
             </div>
             <div className="col-12 col-lg-5 mt-4 mt-lg-0 mb-5">
               <SlugBioCard
-                Name={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Name}
-                Bio={maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Bio}
-                SocialLinks={
-                  maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes
-                    ?.SocialLinks
-                }
+                Name={maindata?.data?.attributes?.Name}
+                Bio={maindata?.data?.attributes?.Bio}
+                SocialLinks={maindata?.data?.attributes?.SocialLinks}
                 Image={
                   maindata.ENV.STRAPI_URL +
-                  maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.BioImage
-                    ?.data?.attributes?.url
+                  maindata?.data?.attributes?.BioImage?.data?.attributes?.url
                 }
                 ImgEnv={maindata.ENV.STRAPI_URL}
               />
@@ -324,20 +319,18 @@ export default function BlogsSlug() {
               <div className="mt-3 box-shadow p-5 bg-white">
                 <h3>Categories</h3>
                 <hr className="py-4" />
-                {maindata?.Slugdata?.blogsSlugs?.data[0]?.attributes?.Categorie.map(
-                  (d: any) => {
-                    return (
-                      <div className="row justify-content-between mb-2">
-                        <div className="col-5">
-                          <p className="para">{d?.name}</p>
-                        </div>
-                        <div className="col-3">
-                          <p className="para">({d?.value})</p>
-                        </div>
+                {maindata?.data?.attributes?.Categorie.map((d: any) => {
+                  return (
+                    <div className="row justify-content-between mb-2">
+                      <div className="col-5">
+                        <p className="para">{d?.name}</p>
                       </div>
-                    )
-                  }
-                )}
+                      <div className="col-3">
+                        <p className="para">({d?.value})</p>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
               <div className="mt-3 box-shadow p-5 bg-white">
                 <h3>Popular Tags</h3>
