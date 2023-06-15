@@ -3,7 +3,6 @@ import { useLoaderData } from '@remix-run/react'
 
 export default function ServiceDevlopment() {
   const result = useLoaderData<typeof loader>()
-  
 
   return (
     <>
@@ -12,10 +11,16 @@ export default function ServiceDevlopment() {
           <div className="row white-text justify-content-center">
             <div className="col-11 ">
               <h4 className="fw-600 pt-3 text-center text-uppercase">
-                {result?.data?.digitalExpriences?.data[0]?.attributes?.ThirdHeading}
+                {
+                  result?.data?.digitalExpriences?.data[0]?.attributes
+                    ?.ThirdHeading
+                }
               </h4>
               <p className="para py-4 text-justify">
-                {result?.data?.digitalExpriences?.data[0]?.attributes?.ThirdSubheading}
+                {
+                  result?.data?.digitalExpriences?.data[0]?.attributes
+                    ?.ThirdSubheading
+                }
               </p>
             </div>
           </div>
@@ -32,6 +37,7 @@ export default function ServiceDevlopment() {
                               result.ENV.STRAPI_URL +
                               d?.Image?.data?.attributes?.url
                             }
+                            alt={d?.Title}
                             className=" w-100"
                           />
                         </div>
@@ -40,9 +46,7 @@ export default function ServiceDevlopment() {
                             <p className="fw-600 para text-uppercase">
                               {d?.Title}
                             </p>
-                            <p className="f-15 ">
-                              {d?.Description}
-                            </p>
+                            <p className="f-15 ">{d?.Description}</p>
                           </div>
                         </div>
                       </div>

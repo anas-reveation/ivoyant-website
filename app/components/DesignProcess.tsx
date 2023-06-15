@@ -12,7 +12,7 @@ export default function DesignProcess(props: DesignProcessProps) {
             <h4 className="fw-600 black-text text-center py-3 text-uppercase">
               {Heading}
             </h4>
-            <img src={Image} className="w-100" />
+            <img src={Image} alt={Heading} className="w-100" />
           </div>
         </div>
       </div>
