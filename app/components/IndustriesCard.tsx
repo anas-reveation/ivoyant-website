@@ -17,7 +17,7 @@ export default function IndustriesCard(props: IndustrysProps) {
         <div className="row min-h-260 h-100 shadow">
           <div className="col-xl-5 col-md-4 col-12 pe-md-0 pe-0 ps-0 d-flex justify-content-center">
             <img
-              className=" serve-img w-100 img-ww"
+              className=" serve-img img-h-w  img-ww"
               alt={title}
               src={imageurl}
             />

@@ -31,6 +31,22 @@
 .img-ww{
     object-fit: cover;
 }
+.img-h-w{
+    height: 100%;
+    width: 100%;
+}
+.logo-footer{
+    width: 32.6px;
+    height: 32px;
+}
+.social-img{
+    width: 24px;
+    height: 20px;
+}
+.arrowright-icon{
+    width: 14.32px;
+    height: 15.92px;
+}
 .top-career{
     margin-top: 8rem;
 }

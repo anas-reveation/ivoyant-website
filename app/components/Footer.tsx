@@ -31,7 +31,7 @@ export default function Footer() {
                   result?.data?.footer?.data?.attributes?.Logo?.data?.attributes
                     ?.url
                 }
-                alt=""
+                alt="logo-footer"
                 className="logo-footer"
               />
               <div className="ms-3 text-white footer-family">
@@ -54,6 +54,7 @@ export default function Footer() {
                               d?.SocialIcon?.data?.attributes?.url
                             }
                             alt="social links"
+                            className="social-img"
                           />
                         </a>
                       </div>
