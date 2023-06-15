@@ -16,7 +16,10 @@ export default function BlogsBanner() {
                   result?.data?.blogsPages?.data[0]?.attributes?.BgImage?.data
                     ?.attributes?.url
                 }
-                className="w-100"
+                alt={
+                  result?.data?.blogsPages?.data[0]?.attributes?.ShortHeading
+                }
+                className="img-h-w"
               />
             </div>
             <div className="col-12 col-md-8 col-lg-6 white-text">
@@ -35,7 +38,7 @@ export default function BlogsBanner() {
                   <img
                     src="./images/blogs/Ellipse 5.svg"
                     alt="author"
-                    className="w-75"
+                    className="w-h-75"
                   />
                 </div>
                 <div className="col-5 col-md-4 ps-0">

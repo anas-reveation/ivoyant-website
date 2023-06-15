@@ -40,6 +40,14 @@
     width: 30.47px;
     height: 24px;
 }
+.w-h-75{
+    height: 75%;
+    width: 75%;
+}
+.blog-arrow{
+    width: 17px;
+    height: 16px;
+}
 .cat-arrow{
     width: 12px;
     height: 8.4px;
