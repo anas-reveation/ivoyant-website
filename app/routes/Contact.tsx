@@ -215,6 +215,7 @@ export default function Home() {
                           <div className="col-md-1 col-2 me-1">
                             <a>
                               <img
+                                className="contact-icon"
                                 src={
                                   result.ENV.STRAPI_URL +
                                   d?.SocialIcon?.data?.attributes?.url
