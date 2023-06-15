@@ -209,22 +209,28 @@ export default function BlogsSlug() {
                               key={$index}
                             >
                               <div className="row">
-                                <img
-                                  src={
-                                    maindata.ENV.STRAPI_URL +
-                                    d?.Rightimg?.data?.attributes?.url
-                                  }
-                                  className="col-6 d-block "
-                                  alt="..."
-                                />
-                                <img
-                                  src={
-                                    maindata.ENV.STRAPI_URL +
-                                    d?.leftImg?.data?.attributes?.url
-                                  }
-                                  className="col-6 d-block "
-                                  alt="..."
-                                />
+                                <div className="col-6">
+                                  <img
+                                    src={
+                                      maindata.ENV.STRAPI_URL +
+                                      d?.Rightimg?.data?.attributes?.url
+                                    }
+                                    className="img-h-w"
+                                    loading="lazy"
+                                    alt="..."
+                                  />
+                                </div>
+                                <div className="col-6 ">
+                                  <img
+                                    src={
+                                      maindata.ENV.STRAPI_URL +
+                                      d?.leftImg?.data?.attributes?.url
+                                    }
+                                    className="img-h-w "
+                                    loading="lazy"
+                                    alt="..."
+                                  />
+                                </div>
                               </div>
                             </div>
                           </>
