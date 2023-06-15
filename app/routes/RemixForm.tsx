@@ -81,11 +81,8 @@ async function submitData(formData: any) {
   }
 }
 
-// console.log(data?.firstname)
-
 export default function Demo() {
   const data = useActionData()
-  //   console.log(data)
 
   return (
     <ValidatedForm validator={validator} method="post">
@@ -97,20 +94,7 @@ export default function Demo() {
         <label htmlFor="file">File</label>
         <input type="file" id="file" name="file" />
       </div>
-      <FormInput name="city" label="Location" selectbox='true' />
-      {/* <SubmitButton />   */}
-      {/* <p>
-        <label htmlFor="firstname">First Name</label>
-        <input type="text" id="firstname" name="firstname" required />
-      </p>
-      <p>
-        <label htmlFor="message">Message</label>
-        <input type="text" id="message" name="message" required />
-      </p>
-      <p>
-        <label htmlFor="email">E mail</label>
-        <input type="text" id="email" name="email" required />
-      </p> */}
+      <FormInput name="city" label="Location" selectbox="true" />
       <div className="form-action">
         <button type="submit">Submit</button>
       </div>

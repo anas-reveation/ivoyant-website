@@ -201,9 +201,7 @@ async function submitData(
 
           config
         )
-        .then(() => {
-          console.log('File uploaded successfully')
-        })
+        .then(() => {})
         .catch((err) => {
           console.log(err)
         })

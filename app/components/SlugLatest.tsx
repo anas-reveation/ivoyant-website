@@ -12,7 +12,6 @@ export default function SlugLatestCard(props: SlugLatestCardProps) {
     const year = date.getFullYear()
     return `${day} ${month} ${year}`
   }
-  console.log(BlogsData)
 
   return (
     <>

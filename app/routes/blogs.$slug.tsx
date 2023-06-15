@@ -141,7 +141,6 @@ async function submitData(formData: any, accessToken: any, instanceUrl: any) {
 
 export default function BlogsSlug() {
   const maindata = useLoaderData<typeof loader>()
-  console.log(maindata)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const data = useActionData()
 
