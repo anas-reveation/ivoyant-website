@@ -7,9 +7,9 @@ export default function Partners() {
   return (
     <div>
       <div className="container mt-5">
-        <h6 className="fw-600 pt-4  mb-4 f18 para text-uppercase">
+        <p className="fw-600 pt-4  mb-4 f18 para text-uppercase">
           {result?.data?.homePages?.data[0]?.attributes?.PartnerImage}
-        </h6>
+        </p>
         <div className="row align-items-center gy-4">
           {result?.data?.homePages?.data[0]?.attributes?.TechnologyImage.map(
             (d: any) => {

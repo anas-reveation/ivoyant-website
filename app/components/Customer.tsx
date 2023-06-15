@@ -14,9 +14,9 @@ export default function Customer(props: CustomersProps) {
   return (
     <div>
       <div className="container my-4">
-        <h6 className="fw-600 pt-4 f18 para text-uppercase">
+        <p className="fw-600 pt-4 f18 para text-uppercase">
           {result?.data?.homePages?.data[0]?.attributes?.Coustmerhead}
-        </h6>
+        </p>
         <div className="row align-items-center  justify-content-center gy-4">
           {result?.data?.homePages?.data[0]?.attributes?.CoustmerImage?.map(
             (d: any) => {

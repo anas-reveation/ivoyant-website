@@ -30,12 +30,12 @@ export default function Culture(props: CultureProps) {
                     ?.Title
                 }
               />
-              <h6 className="fw-600 pt-4 ms-3  mb-4 text-uppercase f18">
+              <p className="fw-600 pt-4 ms-3  mb-4 text-uppercase f18">
                 {
                   result?.data?.homePages?.data[0]?.attributes?.HomeLast[0]
                     ?.Title
                 }{' '}
-              </h6>
+              </p>
             </span>
             <p>
               {

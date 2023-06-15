@@ -90,12 +90,12 @@ export default function Home() {
           </div>
           <div className="container-fluid bg-secondary">
             <div className="container">
-              <h6 className="fw-600 white-text text-center pt-4 text-uppercase">
+              <p className="fw-600 white-text text-center pt-4 mb-1 text-uppercase">
                 {
                   result?.data?.homePages?.data[0]?.attributes
                     ?.Industryshorthead
                 }
-              </h6>
+              </p>
               <h4 className="fw-600 white-text text-center py-4">
                 {result?.data?.homePages?.data[0]?.attributes?.IndustryLonghead}
               </h4>
