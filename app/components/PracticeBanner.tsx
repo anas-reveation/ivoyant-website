@@ -1,4 +1,4 @@
-import { loader } from '~/routes/TechnologyPractice'
+import { loader } from '~/routes/Technology-Practice'
 import { useLoaderData } from '@remix-run/react'
 
 export default function PracticeBanner() {

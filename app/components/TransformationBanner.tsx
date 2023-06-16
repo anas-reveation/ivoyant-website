@@ -1,4 +1,4 @@
-import { loader } from '~/routes/TechnologyTransformation'
+import { loader } from '~/routes/Technology-Transformation'
 import { useLoaderData } from '@remix-run/react'
 
 export default function TransformationBanner() {

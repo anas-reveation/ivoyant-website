@@ -1,5 +1,5 @@
 import { useLoaderData } from '@remix-run/react'
-import { loader } from '~/routes/TermsCondition'
+import { loader } from '~/routes/Terms-Condition'
 export default function TermConditionRich() {
   const result = useLoaderData<typeof loader>()
 

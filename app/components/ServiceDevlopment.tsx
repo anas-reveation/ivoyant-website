@@ -1,4 +1,4 @@
-import { loader } from '~/routes/DigitalExperience'
+import { loader } from '~/routes/Digital-Experience'
 import { useLoaderData } from '@remix-run/react'
 
 export default function ServiceDevlopment() {

@@ -55,7 +55,6 @@ export default function App() {
         <LiveReload />
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-          defer
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
           crossOrigin="anonymous"
         ></script>
@@ -76,29 +75,24 @@ export function links() {
       integrity:
         'sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx',
       crossOrigin: 'anonymous',
-      media: 'all',
     },
     {
       rel: 'stylesheet',
-      media: 'all',
       href: styles,
     },
     {
       rel: 'icon',
       href: '/favicon-16x16.png',
-
       type: 'image/png',
     },
     {
       href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap',
       rel: 'stylesheet',
       as: 'font',
-      media: 'all',
     },
     {
       href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css',
       rel: 'stylesheet',
-      media: 'all',
     },
     {
       href: 'https://code.jquery.com/jquery-migrate-3.4.0.js',
@@ -109,17 +103,14 @@ export function links() {
       href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap',
       rel: 'stylesheet',
       as: 'font',
-      media: 'all',
     },
     {
       href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
       rel: 'stylesheet',
-      media: 'all',
     },
     {
       href: 'https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css',
       rel: 'stylesheet',
-      media: 'all',
     },
   ]
 }
