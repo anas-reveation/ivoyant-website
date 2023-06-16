@@ -31,7 +31,7 @@ export default function IndustriesCard(props: IndustrysProps) {
 
             <Link to={`${link}`}>
               <Button
-                text="Learn More"
+                text="Read More"
                 borderColor="black"
                 color="black-text"
                 className=""

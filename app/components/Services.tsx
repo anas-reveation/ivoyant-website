@@ -20,10 +20,10 @@ export default function Services(props: ServicesProps) {
       <div className=" mt-4">
         <Link to={`${link}`}>
           <Button
-            text="Learn More"
+            text="Read More"
             borderColor="white"
             color="white-text"
-            className="mb-3"
+            className="mb-3 w-auto px-4"
           />
         </Link>
       </div>
