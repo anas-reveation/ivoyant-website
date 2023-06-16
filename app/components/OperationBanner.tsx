@@ -1,4 +1,4 @@
-import { loader } from '~/routes/Technology-Operation'
+import { loader } from '~/routes/TechnologyOperation'
 import { useLoaderData } from '@remix-run/react'
 
 export default function OperationBanner() {

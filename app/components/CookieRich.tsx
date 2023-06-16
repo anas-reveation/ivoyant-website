@@ -1,5 +1,5 @@
 import { useLoaderData } from '@remix-run/react'
-import { loader } from '~/routes/Cookie-Policy'
+import { loader } from '~/routes/CookiePolicy'
 export default function CookieRich() {
   const result = useLoaderData<typeof loader>()
 

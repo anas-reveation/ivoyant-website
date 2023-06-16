@@ -2,7 +2,7 @@ import { useLoaderData } from '@remix-run/react'
 import { graphcmsClient } from '~/lib/graphcms'
 import { json } from '@remix-run/node'
 import { GetTechnologyPracticeSlug } from '~/graphQl/HomeQuery'
-import { loader } from '~/routes/Technology-Practice'
+import { loader } from '~/routes/TechnologyPractice'
 import { Link } from '@remix-run/react'
 import Button from './Button'
 
