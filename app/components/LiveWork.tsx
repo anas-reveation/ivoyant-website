@@ -1,5 +1,5 @@
 import { useLoaderData } from '@remix-run/react'
-import { loader } from '~/routes/LifeAtIvoyant'
+import { loader } from '~/routes/Life-At-Ivoyant'
 
 export default function LiveWork() {
   const result = useLoaderData<typeof loader>()

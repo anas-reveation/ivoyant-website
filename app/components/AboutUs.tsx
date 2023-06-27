@@ -3,7 +3,7 @@ import Testimonial from '~/components/Testimonial'
 import { json } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 import { graphcmsClient } from '~/lib/graphcms'
-import { loader } from '~/routes/WhoWeAre'
+import { loader } from '~/routes/Who-We-Are'
 
 export interface AboutUsProps {
   title?: string

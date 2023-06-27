@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react'
 import { json } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
-import { loader } from '~/routes/WhoWeAre'
+import { loader } from '~/routes/Who-We-Are'
 
 export default function Testimonial() {
   const result = useLoaderData<typeof loader>()

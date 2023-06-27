@@ -1,5 +1,5 @@
 import { useLoaderData } from '@remix-run/react'
-import { loader } from '~/routes/HowWeDo'
+import { loader } from '~/routes/How-We-Do'
 
 export interface ModuleProps {
   Heading?: string

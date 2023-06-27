@@ -1,4 +1,4 @@
-import { loader } from '~/routes/LifeAtIvoyant'
+import { loader } from '~/routes/Life-At-Ivoyant'
 import { useLoaderData } from '@remix-run/react'
 
 export default function HappyPlace() {

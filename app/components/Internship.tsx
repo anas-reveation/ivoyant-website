@@ -1,6 +1,6 @@
 import Button from './Button'
 import { Link, useLoaderData } from '@remix-run/react'
-import { loader } from '~/routes/LifeAtIvoyant'
+import { loader } from '~/routes/Life-At-Ivoyant'
 
 export default function Internship() {
   const result = useLoaderData<typeof loader>()

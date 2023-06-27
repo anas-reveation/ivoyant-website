@@ -42,9 +42,9 @@ export default function Header() {
               <li className={`nav-item text-white me-1 `}>
                 <Link
                   className={`nav-link text-white ${
-                    location.pathname === '/whoweare' ? 'active' : ''
+                    location.pathname === '/who-we-are' ? 'active' : ''
                   }`}
-                  to="/whoweare"
+                  to="/who-we-are"
                 >
                   Who We Are
                 </Link>
@@ -52,11 +52,11 @@ export default function Header() {
               <li className="nav-item dropdown text-white me-1 what-we-are">
                 <a
                   className={`nav-link dropdown-toggle text-white ${
-                    location.pathname.includes('/digitalexperience') ||
-                    location.pathname.includes('/technologytransformation') ||
-                    location.pathname.includes('/technologyoperation') ||
+                    location.pathname.includes('/digital-experience') ||
+                    location.pathname.includes('/technology-transformation') ||
+                    location.pathname.includes('/technology-operation') ||
                     location.pathname.includes('/industries') ||
-                    location.pathname.includes('/technologypractice')
+                    location.pathname.includes('/technology-practice')
                       ? 'active'
                       : ''
                   }`}
@@ -81,14 +81,17 @@ export default function Header() {
                       id="submenu"
                     >
                       <li>
-                        <Link className="dropdown-item" to="/digitalexperience">
+                        <Link
+                          className="dropdown-item"
+                          to="/digital-experience"
+                        >
                           Digital Experience
                         </Link>
                       </li>
                       <li>
                         <Link
                           className="dropdown-item"
-                          to="/technologytransformation"
+                          to="/technology-transformation"
                         >
                           Technology Transformation
                         </Link>
@@ -96,7 +99,7 @@ export default function Header() {
                       <li>
                         <Link
                           className="dropdown-item"
-                          to="/technologyoperation"
+                          to="/technology-operation"
                         >
                           Technology Operation
                         </Link>
@@ -127,7 +130,10 @@ export default function Header() {
                     </ul>
                   </li>
                   <li className="text-white">
-                    <Link className={`dropdown-item `} to="/technologypractice">
+                    <Link
+                      className={`dropdown-item `}
+                      to="/technology-practice"
+                    >
                       Technology Practices{' '}
                       <span className="light-green f-11">&#9658;</span>
                     </Link>
@@ -142,7 +148,7 @@ export default function Header() {
                               <Link
                                 className="dropdown-item"
                                 to={
-                                  'technologypractice' +
+                                  'technology-practice' +
                                   '/' +
                                   d?.attributes?.Slug
                                 }
@@ -160,9 +166,9 @@ export default function Header() {
               <li className={`nav-item text-white me-1 `}>
                 <Link
                   className={`nav-link text-white ${
-                    location.pathname === '/howwedo' ? 'active' : ''
+                    location.pathname === '/how-we-do' ? 'active' : ''
                   }`}
-                  to="/howwedo"
+                  to="/how-we-do"
                 >
                   How We Do
                 </Link>
@@ -180,9 +186,9 @@ export default function Header() {
               <li className="nav-item dropdown text-white me-1 resource">
                 <a
                   className={`nav-link dropdown-toggle text-white ${
-                    location.pathname.includes('/privacypolicy') ||
-                    location.pathname.includes('/cookiepolicy') ||
-                    location.pathname.includes('/termscondition') ||
+                    location.pathname.includes('/privacy-policy') ||
+                    location.pathname.includes('/cookie-policy') ||
+                    location.pathname.includes('/terms-condition') ||
                     location.pathname.includes('/blogs')
                       ? 'active'
                       : ''
@@ -206,23 +212,23 @@ export default function Header() {
                     </Link>
                     <ul className="dropdown-menu dropdown-submenu ms-1">
                       <li>
-                        <Link className="dropdown-item" to="/privacypolicy">
+                        <Link className="dropdown-item" to="/privacy-policy">
                           Privacy Policy
                         </Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to="/cookiepolicy">
+                        <Link className="dropdown-item" to="/cookie-policy">
                           Cookie Policy
                         </Link>
                       </li>
                       <li>
                         <Link
                           className={`dropdown-item ${
-                            location.pathname === '/termscondition'
+                            location.pathname === '/terms-condition'
                               ? 'active'
                               : ''
                           }`}
-                          to="/termscondition"
+                          to="/terms-condition"
                         >
                           Terms and Condition
                         </Link>
@@ -255,9 +261,10 @@ export default function Header() {
               <li className="nav-item text-white list-unstyled header d-lg-none">
                 <Link
                   className={`nav-link text-white ${
-                    location.pathname === '/lifeatIvoyant' ? 'active' : ''
+                    location.pathname === '/life-at-Ivoyant' ? 'active' : ''
                   }`}
-                  to="/lifeatIvoyant"
+                  to="/life-at-Ivoyant
+                  "
                 >
                   Life at iVoyant
                 </Link>
@@ -267,9 +274,9 @@ export default function Header() {
           <li className="nav-item text-white list-unstyled header d-none d-lg-block">
             <Link
               className={`nav-link text-white ${
-                location.pathname === '/lifeatIvoyant' ? 'active' : ''
+                location.pathname === '/life-at-Ivoyant' ? 'active' : ''
               }`}
-              to="/lifeatIvoyant"
+              to="/life-at-Ivoyant"
             >
               Life at iVoyant
             </Link>
